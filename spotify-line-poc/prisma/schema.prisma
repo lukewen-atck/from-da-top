@@ -1,0 +1,92 @@
+// Prisma schema for Spotify LINE POC
+// 資料結構說明請參考 README.md
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 使用者（透過 LINE Login 建立）
+model User {
+  id          String   @id @default(uuid())
+  lineUserId  String   @unique @map("line_user_id")
+  displayName String   @map("display_name")
+  pictureUrl  String?  @map("picture_url")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  oauthAccounts    OAuthAccount[]
+  followedArtists  UserFollowArtist[]
+  sessions         Session[]
+
+  @@map("users")
+}
+
+// OAuth 帳號連結（目前用於 Spotify）
+model OAuthAccount {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  provider       String   // "spotify"
+  providerUserId String?  @map("provider_user_id") // Spotify user ID
+  accessToken    String   @map("access_token")
+  refreshToken   String?  @map("refresh_token")
+  tokenExpiresAt DateTime @map("token_expires_at")
+  scope          String?
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, provider])
+  @@map("oauth_accounts")
+}
+
+// 藝人（來自 Spotify）
+model Artist {
+  id              String   @id @default(uuid())
+  spotifyArtistId String   @unique @map("spotify_artist_id")
+  name            String
+  imageUrl        String?  @map("image_url")
+  followersTotal  Int      @default(0) @map("followers_total")
+  genres          String[] // PostgreSQL array
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  followers UserFollowArtist[]
+
+  @@map("artists")
+}
+
+// 使用者追蹤藝人關聯表
+model UserFollowArtist {
+  userId     String   @map("user_id")
+  artistId   String   @map("artist_id")
+  followedAt DateTime @default(now()) @map("followed_at")
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  artist Artist @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@id([userId, artistId])
+  @@map("user_follow_artists")
+}
+
+// Session 表（用於 signed cookie session 的 server-side 存儲）
+model Session {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+

@@ -1,0 +1,428 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// 會員角色枚舉
+// ============================================
+enum MemberRole {
+  FOUNDER    // 創始會員
+  VIP        // VIP 會員
+  MEMBER     // 一般會員
+  GUEST      // 訪客
+}
+
+// ============================================
+// 遊戲分級枚舉
+// ============================================
+enum GameTier {
+  T1
+  T2
+  T3
+}
+
+// ============================================
+// 遊戲節點類型枚舉
+// ============================================
+enum GameNodeType {
+  CITY_HUNT
+  BOOTH
+  HIDDEN_TREASURE
+}
+
+// ============================================
+// 區域顏色枚舉 (Boost)
+// ============================================
+enum ZoneColor {
+  RED
+  GREEN
+  BLUE
+  NONE
+}
+
+// ============================================
+// 卡片狀態枚舉
+// ============================================
+enum CardStatus {
+  UNBOUND    // 未綁定
+  BOUND      // 已綁定
+  DISABLED   // 已停用
+}
+
+// ============================================
+// 點數交易類型枚舉
+// ============================================
+enum PointTransactionType {
+  EARN       // 獲得點數
+  REDEEM     // 兌換消費
+  EXPIRE     // 點數過期
+  ADJUST     // 系統調整
+  BONUS      // 加碼贈點
+  
+  // RZWD Gamification
+  CITY_HUNT        // 城市尋寶
+  BOOTH_SCAN       // 攤位掃描
+  SOCIAL_INJECT    // 社交注入
+  SOCIAL_HANDSHAKE // 社交握手
+  LOTTERY_SPEND    // 樂透消費
+  AUCTION_BID      // 競拍出價
+}
+
+// ============================================
+// 獎勵狀態枚舉
+// ============================================
+enum RewardStatus {
+  AVAILABLE  // 可兌換
+  CLAIMED    // 已領取
+  EXPIRED    // 已過期
+  DISABLED   // 已停用
+}
+
+// ============================================
+// 任務類型枚舉
+// ============================================
+enum MissionType {
+  UPLOAD_PROOF   // 上傳證明圖片
+  OFFLINE_SCAN   // 線下掃碼
+  SECRET_CODE    // 輸入通關密語
+}
+
+// ============================================
+// 任務紀錄狀態枚舉
+// ============================================
+enum MissionRecordStatus {
+  PENDING    // 待審核
+  APPROVED   // 已通過
+  REJECTED   // 已拒絕
+}
+
+// ============================================
+// 用戶資料表
+// ============================================
+model User {
+  id              String      @id @default(cuid())
+  clerkId         String      @unique // Clerk 提供的用戶 ID
+  email           String?     @unique
+  name            String?
+  phone           String?
+  avatarUrl       String?
+  
+  // 會員資訊 (綁定卡片後繼承)
+  memberRole      MemberRole  @default(GUEST)
+  memberNo        String?     @unique // 會員編號，例如 "FDT-001"
+  
+  // 點數
+  totalPoints     Int         @default(0) // 累計獲得點數
+  currentPoints   Int         @default(0) // 目前可用點數
+
+  // RZWD Gamification
+  hasFloppyDisk    Boolean     @default(false) // 是否持有 Floppy Disk (T1 資格)
+  gameTier         GameTier    @default(T3)    // 遊戲分級
+  lastSocialScanAt DateTime?                   // 上次社交互動時間 (冷卻用)
+  dailySocialCount Int         @default(0)     // 每日社交次數紀錄
+
+  
+  // 關聯
+  card            Card?       @relation("UserCard")
+  pointLedger     PointLedger[]
+  claimedRewards  UserReward[]
+  missionRecords  MissionRecord[]
+  gameInteractions GameInteraction[]
+
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  @@index([clerkId])
+  @@index([memberNo])
+}
+
+// ============================================
+// NFC 卡片資料表 (卡片即邀請碼)
+// ============================================
+model Card {
+  id                  String      @id @default(cuid())
+  uid                 String      @unique // NFC 卡片的 UID
+  
+  // 預設身分與編號 (後台預先設定)
+  preAssignedRole     MemberRole  @default(MEMBER)
+  preAssignedMemberNo String      @unique // 預設會員編號，例如 "FDT-001"
+  
+  // 卡片狀態
+  status              CardStatus  @default(UNBOUND)
+  
+  // 綁定資訊
+  userId              String?     @unique
+  user                User?       @relation("UserCard", fields: [userId], references: [id])
+  boundAt             DateTime?   // 綁定時間
+  
+  // 卡片元資料
+  cardName            String?     // 卡片名稱，例如 "黑卡 #001"
+  cardDescription     String?     // 卡片描述
+  batchNo             String?     // 批次編號
+  
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  
+  @@index([uid])
+  @@index([status])
+}
+
+// ============================================
+// 點數帳本 (記錄每筆點數變動)
+// ============================================
+model PointLedger {
+  id              String                @id @default(cuid())
+  
+  userId          String
+  user            User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // 交易資訊
+  type            PointTransactionType
+  amount          Int                   // 正數為增加，負數為減少
+  balance         Int                   // 交易後餘額
+  
+  // 描述與來源
+  description     String?               // 交易描述
+  referenceId     String?               // 關聯 ID (例如訂單編號、獎勵 ID)
+  referenceType   String?               // 關聯類型 (例如 "ORDER", "REWARD")
+  
+  // 有效期限
+  expiresAt       DateTime?             // 點數到期時間
+  
+  createdAt       DateTime              @default(now())
+  
+  @@index([userId])
+  @@index([type])
+  @@index([createdAt])
+}
+
+// ============================================
+// 獎勵/優惠項目
+// ============================================
+model Reward {
+  id              String        @id @default(cuid())
+  
+  // 獎勵基本資訊
+  name            String
+  description     String?
+  imageUrl        String?
+  
+  // 兌換條件
+  pointsCost      Int           // 需要點數
+  requiredRole    MemberRole?   // 需要的會員等級 (null 表示不限)
+  
+  // 庫存管理
+  totalQuantity   Int?          // 總數量 (null 表示不限)
+  claimedQuantity Int           @default(0) // 已領取數量
+  
+  // 有效期限
+  startAt         DateTime?     // 開始時間
+  endAt           DateTime?     // 結束時間
+  
+  status          RewardStatus  @default(AVAILABLE)
+  
+  // 關聯
+  claimedBy       UserReward[]
+  
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  
+  @@index([status])
+  @@index([pointsCost])
+}
+
+// ============================================
+// 用戶領取的獎勵 (多對多關聯表)
+// ============================================
+model UserReward {
+  id          String    @id @default(cuid())
+  
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  rewardId    String
+  reward      Reward    @relation(fields: [rewardId], references: [id], onDelete: Cascade)
+  
+  // 領取資訊
+  pointsSpent Int       // 花費的點數
+  claimedAt   DateTime  @default(now())
+  
+  // 使用狀態
+  usedAt      DateTime? // 使用時間
+  expiresAt   DateTime? // 過期時間
+  
+  @@unique([userId, rewardId, claimedAt]) // 同一獎勵可多次領取，用時間區分
+  @@index([userId])
+  @@index([rewardId])
+}
+
+// ============================================
+// 任務 (Mission)
+// ============================================
+model Mission {
+  id              String        @id @default(cuid())
+  
+  // 任務基本資訊
+  title           String        // 任務標題
+  description     String?       // 任務說明
+  imageUrl        String?       // 任務圖片
+  
+  // 任務類型與獎勵
+  type            MissionType   // 任務類型
+  points          Int           // 完成可獲得的點數
+  
+  // 通關密語 (僅 SECRET_CODE 類型使用)
+  secretCode      String?       // 正確的通關密語
+  
+  // 上下架時間
+  startAt         DateTime?     // 開始時間
+  endAt           DateTime?     // 結束時間
+  isActive        Boolean       @default(true) // 是否啟用
+  
+  // 限制
+  maxCompletions  Int?          // 最大可完成次數 (null 表示不限)
+  perUserLimit    Int           @default(1) // 每人可完成次數
+  
+  // 關聯
+  records         MissionRecord[]
+  
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  
+  @@index([type])
+  @@index([isActive])
+  @@index([startAt, endAt])
+}
+
+// ============================================
+// 任務完成紀錄 (MissionRecord)
+// ============================================
+model MissionRecord {
+  id              String              @id @default(cuid())
+  
+  // 用戶關聯
+  userId          String
+  user            User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // 任務關聯
+  missionId       String
+  mission         Mission             @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  
+  // 審核狀態
+  status          MissionRecordStatus @default(PENDING)
+  
+  // 提交證明 (UPLOAD_PROOF 類型)
+  proofUrl        String?             // 上傳的證明圖片 URL
+  proofNote       String?             // 用戶備註
+  
+  // 審核資訊
+  reviewedAt      DateTime?           // 審核時間
+  reviewedBy      String?             // 審核者 (管理員 ID)
+  rejectionReason String?             // 拒絕原因
+  
+  // 點數發放
+  pointsAwarded   Int?                // 實際發放的點數
+  
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  
+  @@index([userId])
+  @@index([missionId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ============================================
+// 遊戲節點 (GameNode) - City Hunt / Booths
+// ============================================
+model GameNode {
+  id                String       @id @default(cuid())
+  name              String       // 節點名稱
+  type              GameNodeType // 節點類型
+  location          String       // 地點描述
+  baseHz            Int          // 基礎赫茲 (點數)
+  
+  // 遊戲機制
+  zoneColor         ZoneColor    @default(NONE) // 區域顏色加成
+  weeklyCap         Int          @default(75)   // 每週上限 (City Hunt)
+  currentClaimCount Int          @default(0)    // 目前領取次數
+  
+  interactions      GameInteraction[]
+  
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+}
+
+// ============================================
+// 遊戲互動紀錄 (GameInteraction)
+// ============================================
+model GameInteraction {
+  id        String   @id @default(cuid())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  
+  nodeId    String
+  node      GameNode @relation(fields: [nodeId], references: [id])
+  
+  scannedAt DateTime @default(now())
+  hzEarned  Int      // 實際獲得赫茲
+  
+  @@unique([userId, nodeId]) // 每個節點每人只能掃一次 (若需重複掃描則移除此行)
+  @@index([userId])
+  @@index([nodeId])
+}
+
+// ============================================
+// 系統狀態 (SystemState) - Singleton
+// ============================================
+model SystemState {
+  id                String      @id @default(cuid())
+  
+  activeBoostColor  ZoneColor   @default(NONE) // 當前全域加成顏色
+  totalUserCount    Int         @default(0)    // 總玩家數 (LED 顯示用)
+  isInflationActive Boolean     @default(false)// 是否開啟通膨模式
+  
+  updatedAt         DateTime    @updatedAt
+}
+
+// ============================================
+// FROM DA ECHO CHALLENGE - OTP Login
+// ============================================
+model EchoAccount {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  displayName  String?
+  lastLoginAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  otpCodes     EchoOtpCode[]
+
+  @@map("echo_accounts")
+}
+
+model EchoOtpCode {
+  id         String   @id @default(cuid())
+  email      String
+  codeHash   String
+  expiresAt  DateTime
+  usedAt     DateTime?
+  createdAt  DateTime @default(now())
+
+  account    EchoAccount? @relation(fields: [email], references: [email], onDelete: Cascade)
+
+  @@index([email])
+  @@index([expiresAt])
+  @@index([usedAt])
+  @@map("echo_otp_codes")
+}

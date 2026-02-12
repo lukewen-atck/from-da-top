@@ -1,0 +1,529 @@
+@import "tailwindcss";
+
+/* ============================================
+   Project ON AIR: Squad Tactics
+   Cyberpunk Theme Stylesheet
+   ============================================ */
+
+:root {
+  /* Core Colors */
+  --void-black: #0a0a0f;
+  --terminal-green: #00ff9f;
+  --neon-cyan: #00f0ff;
+  --glitch-magenta: #ff00ff;
+  --warning-red: #ff2d55;
+  --alert-orange: #ff6b35;
+  
+  /* Team Colors */
+  --team-red: #ff2d55;
+  --team-red-glow: rgba(255, 45, 85, 0.4);
+  --team-blue: #007aff;
+  --team-blue-glow: rgba(0, 122, 255, 0.4);
+  
+  /* UI Colors */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a24;
+  --bg-elevated: #22222e;
+  --border-dim: #2a2a3a;
+  --border-bright: #3a3a4a;
+  --text-primary: #e0e0e8;
+  --text-secondary: #8080a0;
+  --text-muted: #505070;
+  
+  /* Fonts */
+  --font-display: 'Orbitron', 'Rajdhani', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body: 'Inter', 'Noto Sans TC', sans-serif;
+}
+
+@theme inline {
+  --color-void: var(--void-black);
+  --color-terminal: var(--terminal-green);
+  --color-neon: var(--neon-cyan);
+  --color-glitch: var(--glitch-magenta);
+  --color-warning: var(--warning-red);
+  --color-alert: var(--alert-orange);
+  --color-team-red: var(--team-red);
+  --color-team-blue: var(--team-blue);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(ellipse at top, rgba(0, 240, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(255, 0, 255, 0.02) 0%, transparent 50%);
+  min-height: 100vh;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Grid overlay effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+}
+
+.text-glow-sm {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+/* Gradient text */
+.text-gradient-cyber {
+  background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--glitch-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-danger {
+  background: linear-gradient(90deg, var(--warning-red) 0%, var(--alert-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   Cards & Containers
+   ============================================ */
+
+.card-cyber {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  opacity: 0.5;
+}
+
+.card-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 240, 255, 0.1),
+    inset 0 0 20px rgba(0, 240, 255, 0.02);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn-cyber {
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border-bright);
+  color: var(--neon-cyan);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.btn-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-cyber:hover::before {
+  left: 100%;
+}
+
+.btn-cyber:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.btn-cyber:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  color: var(--warning-red);
+  border-color: var(--warning-red);
+}
+
+.btn-danger:hover {
+  border-color: var(--warning-red);
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.3);
+}
+
+/* ============================================
+   JAM / Glitch Overlay
+   ============================================ */
+
+.jam-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 15, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: jamFlash 0.1s ease-in-out;
+}
+
+@keyframes jamFlash {
+  0%, 100% { background: rgba(10, 10, 15, 0.95); }
+  50% { background: rgba(255, 45, 85, 0.3); }
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 0.3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitchBefore 0.3s infinite;
+  color: var(--neon-cyan);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitchAfter 0.3s infinite;
+  color: var(--warning-red);
+  z-index: -2;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitchBefore {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(20% 0 60% 0); transform: translate(-3px); }
+  40% { clip-path: inset(40% 0 40% 0); transform: translate(3px); }
+  60% { clip-path: inset(60% 0 20% 0); transform: translate(-3px); }
+  80% { clip-path: inset(80% 0 0 0); transform: translate(3px); }
+}
+
+@keyframes glitchAfter {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(80% 0 0 0); transform: translate(3px); }
+  40% { clip-path: inset(60% 0 20% 0); transform: translate(-3px); }
+  60% { clip-path: inset(40% 0 40% 0); transform: translate(3px); }
+  80% { clip-path: inset(20% 0 60% 0); transform: translate(-3px); }
+}
+
+/* Scanline effect */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  animation: scanMove 8s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================
+   Scanner HUD
+   ============================================ */
+
+.scanner-frame {
+  position: relative;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 
+    0 0 20px rgba(0, 240, 255, 0.3),
+    inset 0 0 40px rgba(0, 240, 255, 0.1);
+}
+
+.scanner-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  animation: crosshairPulse 1.5s ease-in-out infinite;
+}
+
+.scanner-crosshair::before,
+.scanner-crosshair::after {
+  content: '';
+  position: absolute;
+  background: var(--neon-cyan);
+}
+
+.scanner-crosshair::before {
+  top: 50%;
+  left: -10px;
+  right: -10px;
+  height: 1px;
+}
+
+.scanner-crosshair::after {
+  left: 50%;
+  top: -10px;
+  bottom: -10px;
+  width: 1px;
+}
+
+@keyframes crosshairPulse {
+  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Corner brackets for scanner */
+.scanner-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--neon-cyan);
+  border-style: solid;
+}
+
+.scanner-corner.top-left {
+  top: 10px;
+  left: 10px;
+  border-width: 2px 0 0 2px;
+}
+
+.scanner-corner.top-right {
+  top: 10px;
+  right: 10px;
+  border-width: 2px 2px 0 0;
+}
+
+.scanner-corner.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 2px 2px;
+}
+
+.scanner-corner.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ============================================
+   Status Indicators
+   ============================================ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-active {
+  background: var(--terminal-green);
+  box-shadow: 0 0 10px var(--terminal-green);
+}
+
+.status-jammed {
+  background: var(--warning-red);
+  box-shadow: 0 0 10px var(--warning-red);
+  animation: statusBlink 0.5s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes statusBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ============================================
+   Team Colors
+   ============================================ */
+
+.team-red {
+  --team-color: var(--team-red);
+  --team-glow: var(--team-red-glow);
+}
+
+.team-blue {
+  --team-color: var(--team-blue);
+  --team-glow: var(--team-blue-glow);
+}
+
+.team-badge {
+  background: var(--team-color);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 15px var(--team-glow);
+}
+
+/* ============================================
+   Progress / Timer
+   ============================================ */
+
+.timer-ring {
+  transform: rotate(-90deg);
+}
+
+.timer-ring circle {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.timer-ring .bg {
+  stroke: var(--border-dim);
+}
+
+.timer-ring .progress {
+  stroke: var(--warning-red);
+  stroke-dasharray: 283; /* 2 * PI * 45 */
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.glass {
+  background: rgba(26, 26, 36, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.border-glow {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 20px);
+}
+

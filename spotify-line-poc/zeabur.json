@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.zeabur.app/template.json",
+  "build": {
+    "type": "nextjs"
+  },
+  "services": [
+    {
+      "name": "spotify-line-poc",
+      "template": "NEXTJS",
+      "env": {
+        "DATABASE_URL": "${POSTGRES_CONNECTION_STRING}",
+        "APP_BASE_URL": "${ZEABUR_WEB_URL}",
+        "SESSION_SECRET": "${SESSION_SECRET}",
+        "LINE_CHANNEL_ID": "${LINE_CHANNEL_ID}",
+        "LINE_CHANNEL_SECRET": "${LINE_CHANNEL_SECRET}",
+        "LINE_REDIRECT_URI": "${ZEABUR_WEB_URL}/api/auth/line/callback",
+        "SPOTIFY_CLIENT_ID": "${SPOTIFY_CLIENT_ID}",
+        "SPOTIFY_CLIENT_SECRET": "${SPOTIFY_CLIENT_SECRET}",
+        "SPOTIFY_REDIRECT_URI": "${ZEABUR_WEB_URL}/api/auth/spotify/callback"
+      }
+    },
+    {
+      "name": "postgres",
+      "template": "POSTGRESQL"
+    }
+  ]
+}
+
