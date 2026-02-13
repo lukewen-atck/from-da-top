@@ -33,6 +33,7 @@ async function main() {
             tempo: s.tempo,
             vocal: s.vocal,
             albumArt: s.albumArt,
+            preview_url: s.previewUrl || null,
             is_taken: false,
             taken_by: null,
         }));

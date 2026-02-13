@@ -64,6 +64,39 @@ export function ResultCard({ song, isNew = false, onClose }) {
     return colors[index];
   };
 
+  // Audio Player State
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audio, setAudio] = useState(null);
+
+  // 初始化音訊
+  useEffect(() => {
+    const url = song.preview_url || song.previewUrl;
+    if (url) {
+      const newAudio = new Audio(url);
+      newAudio.volume = 0.5;
+      newAudio.onended = () => setIsPlaying(false);
+      setAudio(newAudio);
+    }
+    return () => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+  }, [song]);
+
+  const togglePlay = (e) => {
+    e.stopPropagation();
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch(e => console.error("Play failed:", e));
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className="relative group">
       {/* 粒子效果 */}
@@ -120,8 +153,28 @@ export function ResultCard({ song, isNew = false, onClose }) {
                 </div>
               </div>
 
+              {/* Play Button Overlay */}
+              {(song.preview_url || song.previewUrl) && (
+                <div className="absolute inset-0 flex items-center justify-center z-40 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <button
+                    onClick={togglePlay}
+                    className="w-12 h-12 rounded-full bg-black/80 border-2 border-neon-green text-neon-green flex items-center justify-center hover:bg-neon-green hover:text-black transition-all cursor-pointer pointer-events-auto transform hover:scale-110 shadow-[0_0_15px_rgba(0,255,65,0.5)]"
+                  >
+                    {isPlaying ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
+              )}
+
               {/* Meta Tags Overlay */}
-              <div className="absolute bottom-2 right-2 flex flex-col items-end gap-1 z-30">
+              <div className="absolute bottom-2 right-2 flex flex-col items-end gap-1 z-30 pointer-events-none">
                 <span className="bg-black/80 text-neon-green border border-neon-green/50 px-1 text-[10px] font-mono">
                   {song.year}
                 </span>
@@ -132,7 +185,19 @@ export function ResultCard({ song, isNew = false, onClose }) {
             </div>
 
             {/* Song Info */}
-            <div className="text-center space-y-1 mb-3">
+            <div className="text-center space-y-1 mb-3 relative z-50">
+              {/* Audio Visualizer (Fake) if playing */}
+              {isPlaying && (
+                <div className="absolute -top-6 left-0 right-0 h-4 flex items-end justify-center gap-1 opacity-70">
+                  {[...Array(10)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-1 bg-neon-green animate-music-bar"
+                      style={{ animationDelay: `${i * 0.1}s`, height: '100%' }}
+                    />
+                  ))}
+                </div>
+              )}
               <h2 className="text-2xl font-bold text-white font-sans tracking-tight leading-none neon-text">
                 {song.title}
               </h2>
@@ -143,7 +208,7 @@ export function ResultCard({ song, isNew = false, onClose }) {
             </div>
 
             {/* Comment Box */}
-            <div className="bg-neon-purple/10 border border-neon-purple/30 p-2 text-center relative">
+            <div className="bg-neon-purple/10 border border-neon-purple/30 p-2 text-center relative hover:bg-neon-purple/20 transition-colors">
               <p className="text-neon-purple text-xs font-mono leading-relaxed">
                 &quot;{comment}&quot;
               </p>

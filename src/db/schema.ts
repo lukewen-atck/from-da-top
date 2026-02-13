@@ -23,9 +23,12 @@ export const songs = pgTable('songs', {
     title: text('title').notNull(),
     artist: text('artist').notNull(),
     year: text('year'),
-    tempo: text('tempo'),
-    vocal: text('vocal'),
+    tempo: text('tempo').notNull(),
+    vocal: text('vocal').notNull(),
     albumArt: text('album_art'),
+    preview_url: text('preview_url'),
+
+    // Status
     is_taken: boolean('is_taken').default(false).notNull(),
     taken_by: text('taken_by').references(() => users.uid),
 });
