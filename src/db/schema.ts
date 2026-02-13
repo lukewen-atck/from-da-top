@@ -5,7 +5,7 @@ import { relations } from 'drizzle-orm';
 export const users = pgTable('users', {
     uid: text('uid').primaryKey(),
     has_rerolled: boolean('has_rerolled').default(false).notNull(),
-    selected_song_id: integer('selected_song_id').references(() => songs.id),
+    selected_song_id: integer('selected_song_id'),
     created_at: timestamp('created_at').defaultNow().notNull(),
 });
 
