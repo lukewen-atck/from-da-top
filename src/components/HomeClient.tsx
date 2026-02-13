@@ -6,7 +6,7 @@ import { ResultCard } from './ResultCard';
 import { CyberButton, CyberWindow, CyberProgressBar } from './Win95Window';
 import { StyleSelector } from './StyleSelector';
 import { getSongStats } from '../data/songs';
-import { drawSong, confirmSong, executeReroll } from '../app/actions';
+import { drawSong, confirmSong, executeReroll, updateInstagram } from '../app/actions';
 import { CyberToast } from './CyberToast';
 
 // Tasks for reroll (Interview Style)
@@ -32,6 +32,10 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
     // New: Recording Check Modal State
     const [showRecordingCheck, setShowRecordingCheck] = useState(false);
+
+    // New: Instagram Input State
+    const [showInstagramInput, setShowInstagramInput] = useState(false);
+    const [instagramHandle, setInstagramHandle] = useState('');
 
     // Filter State
     const [selectedMood, setSelectedMood] = useState<string | null>(null);
@@ -75,8 +79,37 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
     // Handlers
     const handleStartDraw = () => {
+        // Step 0: Check Instagram first
+        if (!user.instagram) {
+            setShowInstagramInput(true);
+            return;
+        }
+
         // Step 1: Open Recording Check first
         setShowRecordingCheck(true);
+    };
+
+    const handleSaveInstagram = async () => {
+        if (!instagramHandle.trim() || isProcessing) return;
+        setIsProcessing(true);
+        try {
+            const res = await updateInstagram(uid, instagramHandle);
+            if (res.success) {
+                // Update local user state with new instagram
+                setUser({ ...user, instagram: instagramHandle });
+                setShowInstagramInput(false);
+                showToast('IG 帳號已儲存', 'success');
+
+                // Proceed to next step automatically
+                setTimeout(() => setShowRecordingCheck(true), 500);
+            } else {
+                showToast('儲存失敗: ' + res.message, 'error');
+            }
+        } catch (e) {
+            showToast('連線錯誤', 'error');
+        } finally {
+            setIsProcessing(false);
+        }
     };
 
     const handleConfirmRecording = () => {
@@ -310,6 +343,56 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
                     </CyberWindow>
                 </div>
             )}
+
+            {/* Instagram Input Modal */}
+            {showInstagramInput && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in zoom-in duration-300">
+                    <CyberWindow title="使用者身分驗證" className="border-neon-green w-full max-w-md shadow-[0_0_30px_rgba(0,255,65,0.2)]" onClose={() => setShowInstagramInput(false)}>
+                        <div className="space-y-6 py-4 px-2">
+                            <div className="text-center space-y-2">
+                                <div className="w-16 h-16 mx-auto bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 rounded-xl p-1 animate-pulse">
+                                    <div className="w-full h-full bg-black rounded-lg flex items-center justify-center">
+                                        <span className="text-2xl">📸</span>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-white font-mono">輸入 Instagram 帳號</h3>
+                                <p className="text-metal-silver text-sm">若中獎將透過 IG 聯繫您領獎</p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="relative group">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <span className="text-neon-green font-mono">@</span>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        value={instagramHandle}
+                                        onChange={(e) => setInstagramHandle(e.target.value)}
+                                        className="w-full bg-black/50 border border-metal-silver text-white pl-8 pr-4 py-3 focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green font-mono transition-all placeholder:text-gray-600"
+                                        placeholder="your_instagram_id"
+                                        autoFocus
+                                    />
+                                    <div className="absolute inset-0 border border-transparent group-hover:border-neon-green/30 pointer-events-none transition-colors" />
+                                </div>
+
+                                <div className="text-xs text-gray-500 text-center font-mono">
+                                    * 請確認帳號正確，以免錯失獎項
+                                </div>
+
+                                <CyberButton
+                                    onClick={handleSaveInstagram}
+                                    variant="primary"
+                                    className="w-full py-3 text-lg"
+                                    disabled={!instagramHandle.trim() || isProcessing}
+                                >
+                                    {isProcessing ? '資料寫入中...' : '確認並繼續 >>'}
+                                </CyberButton>
+                            </div>
+                        </div>
+                    </CyberWindow>
+                </div>
+            )}
+
         </MainLayout>
     );
 }

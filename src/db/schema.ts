@@ -7,6 +7,7 @@ export const users = pgTable('users', {
     has_rerolled: boolean('has_rerolled').default(false).notNull(),
     selected_song_id: integer('selected_song_id'),
     name: text('name'),
+    instagram: text('instagram'),
     note: text('note'),
     created_at: timestamp('created_at').defaultNow().notNull(),
 });

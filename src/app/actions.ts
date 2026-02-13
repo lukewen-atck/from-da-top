@@ -130,3 +130,17 @@ export async function executeReroll(uid: string) {
         return { success: false, message: 'Failed to execute reroll' };
     }
 }
+// 5. updateInstagram
+export async function updateInstagram(uid: string, handle: string) {
+    try {
+        await db.update(users)
+            .set({ instagram: handle })
+            .where(eq(users.uid, uid));
+
+        revalidatePath('/');
+        return { success: true };
+    } catch (error) {
+        console.error('updateInstagram error:', error);
+        return { success: false, message: 'Failed to update Instagram' };
+    }
+}
