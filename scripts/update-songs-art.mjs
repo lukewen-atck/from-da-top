@@ -41,11 +41,20 @@ async function fetchArt(term) {
     for (const song of songs) {
         process.stdout.write(`Processing ${song.id}: ${song.artist} - ${song.title}... `);
 
-        let term = `${song.artist} ${song.title}`;
+        let term;
+        // 1. Priority: Use explicit album search term if available
+        if (song.album_search_term) {
+            term = `${song.artist} ${song.album_search_term}`;
+            console.log(`(Custom term: ${term})`);
+        } else {
+            // 2. Default: Artist + Title
+            term = `${song.artist} ${song.title}`;
+        }
+
         let art = await fetchArt(term);
 
-        // If not found, try title only if it has parentheses (e.g. remove extra info)
-        if (!art && song.title.includes('(')) {
+        // 3. Fallback: If not found and title has parentheses, try removing them (only if not using custom term)
+        if (!art && !song.album_search_term && song.title.includes('(')) {
             term = `${song.artist} ${song.title.split('(')[0]}`;
             art = await fetchArt(term);
         }

@@ -58,106 +58,206 @@ const getPlaceholderImage = (id) => {
 // songs_0204 - 2026/02/04 版本（50首）- 含專輯封面
 // ============================================================
 export const songs_0204 = [
-  { id: 1, title: '1001個願望', artist: '4 In Love', year: '2001', tempo: '輕快', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/4inlove1001/300/300' },
-  { id: 2, title: '流星雨', artist: 'F4', year: '2001', tempo: '抒情', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/f4meteor/300/300' },
-  { id: 3, title: '第一時間', artist: 'F4', year: '2001', tempo: '輕快', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/f4first/300/300' },
-  { id: 4, title: '煙火的季節', artist: 'F4', year: '2002', tempo: '抒情', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/f4firework/300/300' },
-  { id: 5, title: '唯一', artist: '王力宏', year: '2001', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/wanglihom1/300/300' },
-  { id: 6, title: '愛的就是你', artist: '王力宏', year: '2001', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/wanglihom2/300/300' },
-  { id: 7, title: '心電心', artist: '王心凌', year: '2009', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/cyndi1/300/300' },
-  { id: 8, title: '我會很愛你', artist: '言承旭', year: '2009', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jerry1/300/300' },
-  { id: 9, title: '黃昏', artist: '周傳雄', year: '2000', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/steve1/300/300' },
-  { id: 10, title: '寂寞沙洲冷', artist: '周傳雄', year: '2005', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/steve2/300/300' },
-  { id: 11, title: '零', artist: '柯有綸', year: '2004', tempo: '快歌', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/alan1/300/300' },
-  { id: 12, title: '哭笑不得', artist: '柯有綸', year: '2005', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/alan2/300/300' },
-  { id: 13, title: 'Superman', artist: '倪子岡', year: '2008', tempo: '快歌', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/nicky1/300/300' },
-  { id: 14, title: '情非得已', artist: '庾澄慶', year: '2001', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/harlem1/300/300' },
-  { id: 15, title: '海嘯', artist: '庾澄慶', year: '2001', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/harlem2/300/300' },
-  { id: 16, title: '難以抗拒你容顏', artist: '張信哲', year: '2000', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jeff1/300/300' },
-  { id: 17, title: '寶貝', artist: '張懸', year: '2006', tempo: '輕快', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/deserts1/300/300' },
-  { id: 18, title: '喜歡', artist: '張懸', year: '2007', tempo: '輕快', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/deserts2/300/300' },
-  { id: 19, title: '如果沒有你', artist: '莫文蔚', year: '2006', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/karen1/300/300' },
-  { id: 20, title: '愛', artist: '莫文蔚', year: '2002', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/karen2/300/300' },
-  { id: 21, title: '男人女人', artist: '許茹芸', year: '2007', tempo: '抒情', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/valen1/300/300' },
-  { id: 22, title: '我愛的人', artist: '陳小春', year: '2001', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jordan1/300/300' },
-  { id: 23, title: '下半輩子', artist: '陳小春', year: '2002', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jordan2/300/300' },
-  { id: 24, title: '喜歡兩個人', artist: '彭佳慧', year: '2001', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/julia1/300/300' },
-  { id: 25, title: '走在紅毯那一天', artist: '彭佳慧', year: '2002', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/julia2/300/300' },
-  { id: 26, title: '回味', artist: '彭佳慧', year: '2000', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/julia3/300/300' },
-  { id: 27, title: '戀上一個人', artist: '游鴻明', year: '2002', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/chris1/300/300' },
-  { id: 28, title: '下沙', artist: '游鴻明', year: '2000', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/chris2/300/300' },
-  { id: 29, title: '詩人的眼淚', artist: '游鴻明', year: '2006', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/chris3/300/300' },
-  { id: 30, title: '那女孩對我說', artist: '黃義達', year: '2005', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/yida1/300/300' },
-  { id: 31, title: '藍天', artist: '黃義達', year: '2004', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/yida2/300/300' },
-  { id: 32, title: '雨愛', artist: '楊丞琳', year: '2009', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/rainie1/300/300' },
-  { id: 33, title: '曖昧', artist: '楊丞琳', year: '2005', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/rainie2/300/300' },
-  { id: 34, title: '缺氧', artist: '楊丞琳', year: '2007', tempo: '輕快', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/rainie3/300/300' },
-  { id: 35, title: '獨立', artist: '蜜雪薇琪', year: '2004', tempo: '輕快', vocal: '團體/合唱',
-    albumArt: 'https://picsum.photos/seed/michelle1/300/300' },
-  { id: 36, title: '彩虹天堂', artist: '劉畊宏', year: '2005', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/will1/300/300' },
-  { id: 37, title: '倒帶', artist: '蔡依林', year: '2004', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin1/300/300' },
-  { id: 38, title: '說愛你', artist: '蔡依林', year: '2003', tempo: '輕快', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin2/300/300' },
-  { id: 39, title: '天空', artist: '蔡依林', year: '2005', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin3/300/300' },
-  { id: 40, title: '檸檬草的味道', artist: '蔡依林', year: '2004', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin4/300/300' },
-  { id: 41, title: '看我七十二變', artist: '蔡依林', year: '2003', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin5/300/300' },
-  { id: 42, title: '布拉格廣場', artist: '蔡依林', year: '2003', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin6/300/300' },
-  { id: 43, title: '愛情三十六計', artist: '蔡依林', year: '2004', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin7/300/300' },
-  { id: 44, title: '睜一隻眼一隻眼', artist: '蔡依林', year: '2005', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin8/300/300' },
-  { id: 45, title: '野蠻遊戲', artist: '蔡依林', year: '2005', tempo: '快歌', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/jolin9/300/300' },
-  { id: 46, title: '我可以', artist: '蔡旻佑', year: '2006', tempo: '抒情', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/evan1/300/300' },
-  { id: 47, title: '小乖乖', artist: '蔡旻佑', year: '2009', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/evan2/300/300' },
-  { id: 48, title: '王妃', artist: '蕭敬騰', year: '2009', tempo: '快歌', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jam1/300/300' },
-  { id: 49, title: '阿飛的小蝴蝶', artist: '蕭敬騰', year: '2009', tempo: '輕快', vocal: '男生',
-    albumArt: 'https://picsum.photos/seed/jam2/300/300' },
-  { id: 50, title: '空港', artist: '戴愛玲', year: '2009', tempo: '抒情', vocal: '女生',
-    albumArt: 'https://picsum.photos/seed/princess1/300/300' },
+  {
+    id: 1, title: '1001個願望', artist: '4 In Love', year: '2001', tempo: '輕快', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/4inlove1001/300/300'
+  },
+  {
+    id: 2, title: '流星雨', artist: 'F4', year: '2001', tempo: '抒情', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/f4meteor/300/300'
+  },
+  {
+    id: 3, title: '第一時間', artist: 'F4', year: '2001', tempo: '輕快', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/f4first/300/300'
+  },
+  {
+    id: 4, title: '煙火的季節', artist: 'F4', year: '2002', tempo: '抒情', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/f4firework/300/300'
+  },
+  {
+    id: 5, title: '唯一', artist: '王力宏', year: '2001', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/wanglihom1/300/300'
+  },
+  {
+    id: 6, title: '愛的就是你', artist: '王力宏', year: '2001', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/wanglihom2/300/300'
+  },
+  {
+    id: 7, title: '心電心', artist: '王心凌', year: '2009', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/cyndi1/300/300'
+  },
+  {
+    id: 8, title: '我會很愛你', artist: '言承旭', year: '2009', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jerry1/300/300'
+  },
+  {
+    id: 9, title: '黃昏', artist: '周傳雄', year: '2000', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/steve1/300/300'
+  },
+  {
+    id: 10, title: '寂寞沙洲冷', artist: '周傳雄', year: '2005', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/steve2/300/300'
+  },
+  {
+    id: 11, title: '零', artist: '柯有綸', year: '2004', tempo: '快歌', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/alan1/300/300'
+  },
+  {
+    id: 12, title: '哭笑不得', artist: '柯有綸', year: '2005', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/alan2/300/300'
+  },
+  {
+    id: 13, title: 'Superman', artist: '倪子岡', year: '2008', tempo: '快歌', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/nicky1/300/300'
+  },
+  {
+    id: 14, title: '情非得已', artist: '庾澄慶', year: '2001', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/harlem1/300/300'
+  },
+  {
+    id: 15, title: '海嘯', artist: '庾澄慶', year: '2001', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/harlem2/300/300'
+  },
+  {
+    id: 16, title: '難以抗拒你容顏', artist: '張信哲', year: '2000', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jeff1/300/300'
+  },
+  {
+    id: 17, title: '寶貝', artist: '張懸', year: '2006', tempo: '輕快', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/deserts1/300/300'
+  },
+  {
+    id: 18, title: '喜歡', artist: '張懸', year: '2007', tempo: '輕快', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/deserts2/300/300'
+  },
+  {
+    id: 19, title: '如果沒有你', artist: '莫文蔚', year: '2006', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/karen1/300/300'
+  },
+  {
+    id: 20, title: '愛', artist: '莫文蔚', year: '2002', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/karen2/300/300'
+  },
+  {
+    id: 21, title: '男人女人', artist: '許茹芸', year: '2007', tempo: '抒情', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/valen1/300/300'
+  },
+  {
+    id: 22, title: '我愛的人', artist: '陳小春', year: '2001', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jordan1/300/300'
+  },
+  {
+    id: 23, title: '下半輩子', artist: '陳小春', year: '2002', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jordan2/300/300'
+  },
+  {
+    id: 24, title: '喜歡兩個人', artist: '彭佳慧', year: '2001', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/julia1/300/300'
+  },
+  {
+    id: 25, title: '走在紅毯那一天', artist: '彭佳慧', year: '2002', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/julia2/300/300'
+  },
+  {
+    id: 26, title: '回味', artist: '彭佳慧', year: '2000', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/julia3/300/300'
+  },
+  {
+    id: 27, title: '戀上一個人', artist: '游鴻明', year: '2002', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/chris1/300/300'
+  },
+  {
+    id: 28, title: '下沙', artist: '游鴻明', year: '2000', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/chris2/300/300'
+  },
+  {
+    id: 29, title: '詩人的眼淚', artist: '游鴻明', year: '2006', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/chris3/300/300'
+  },
+  {
+    id: 30, title: '那女孩對我說', artist: '黃義達', year: '2005', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/yida1/300/300'
+  },
+  {
+    id: 31, title: '藍天', artist: '黃義達', year: '2004', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/yida2/300/300'
+  },
+  {
+    id: 32, title: '雨愛', artist: '楊丞琳', year: '2009', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/rainie1/300/300'
+  },
+  {
+    id: 33, title: '曖昧', artist: '楊丞琳', year: '2005', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/rainie2/300/300'
+  },
+  {
+    id: 34, title: '缺氧', artist: '楊丞琳', year: '2007', tempo: '輕快', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/rainie3/300/300'
+  },
+  {
+    id: 35, title: '獨立', artist: '蜜雪薇琪', year: '2004', tempo: '輕快', vocal: '團體/合唱',
+    albumArt: 'https://picsum.photos/seed/michelle1/300/300'
+  },
+  {
+    id: 36, title: '彩虹天堂', artist: '劉畊宏', year: '2005', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/will1/300/300'
+  },
+  {
+    id: 37, title: '倒帶', artist: '蔡依林', year: '2004', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin1/300/300'
+  },
+  {
+    id: 38, title: '說愛你', artist: '蔡依林', year: '2003', tempo: '輕快', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin2/300/300'
+  },
+  {
+    id: 39, title: '天空', artist: '蔡依林', year: '2005', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin3/300/300'
+  },
+  {
+    id: 40, title: '檸檬草的味道', artist: '蔡依林', year: '2004', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin4/300/300'
+  },
+  {
+    id: 41, title: '看我七十二變', artist: '蔡依林', year: '2003', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin5/300/300'
+  },
+  {
+    id: 42, title: '布拉格廣場', artist: '蔡依林', year: '2003', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin6/300/300'
+  },
+  {
+    id: 43, title: '愛情三十六計', artist: '蔡依林', year: '2004', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin7/300/300'
+  },
+  {
+    id: 44, title: '睜一隻眼一隻眼', artist: '蔡依林', year: '2005', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin8/300/300'
+  },
+  {
+    id: 45, title: '野蠻遊戲', artist: '蔡依林', year: '2005', tempo: '快歌', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/jolin9/300/300'
+  },
+  {
+    id: 46, title: '我可以', artist: '蔡旻佑', year: '2006', tempo: '抒情', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/evan1/300/300'
+  },
+  {
+    id: 47, title: '小乖乖', artist: '蔡旻佑', year: '2009', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/evan2/300/300'
+  },
+  {
+    id: 48, title: '王妃', artist: '蕭敬騰', year: '2009', tempo: '快歌', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jam1/300/300'
+  },
+  {
+    id: 49, title: '阿飛的小蝴蝶', artist: '蕭敬騰', year: '2009', tempo: '輕快', vocal: '男生',
+    albumArt: 'https://picsum.photos/seed/jam2/300/300'
+  },
+  {
+    id: 50, title: '空港', artist: '戴愛玲', year: '2009', tempo: '抒情', vocal: '女生',
+    albumArt: 'https://picsum.photos/seed/princess1/300/300'
+  },
 ];
 
 export const songs_2026_02_13 = [
@@ -516,7 +616,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony36/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/b9/fa/14b9fa3f-ef0c-01de-3721-93ff740062b5/23UM1IM56711.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5b/f9/18/5bf918b8-a4b0-ce89-8c4b-1ed682a51e8c/mzaf_2529843122965358541.plus.aac.p.m4a"
   },
   {
@@ -526,7 +626,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony37/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/53/6c/72/536c7219-e177-a912-9322-e1abf70e8733/23UM1IM58828.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a2/92/52/a29252ca-34fc-73b9-d49a-602d14e1dbe7/mzaf_2363681558363922129.plus.aac.p.m4a"
   },
   {
@@ -536,7 +636,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony38/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/53/6c/72/536c7219-e177-a912-9322-e1abf70e8733/23UM1IM58828.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2e/99/24/2e99240d-aae9-1c6b-8ef8-03e5640a1815/mzaf_10779055084387930793.plus.aac.p.m4a"
   },
   {
@@ -756,7 +856,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony60/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/4f/90/70/4f90706f-a64e-71cc-5a23-59c4cf04cbdb/00602517932968.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b6/93/87/b693879c-1d47-31c8-94c1-575fcbd8179c/mzaf_5899645193124934119.plus.aac.p.m4a"
   },
   {
@@ -766,7 +866,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony61/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5c/32/97/5c32974e-27e3-add7-41a2-9c74891e1304/828768395523.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/29/7c/56297cfa-bcbe-793c-a3b6-4dc44a730083/mzaf_8238337052627340663.plus.aac.p.m4a"
   },
   {
@@ -776,7 +876,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony62/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/81/cc/52/81cc5224-3ace-5e3c-468a-17b4b71da831/dj.aqolbuce.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5f/c3/b6/5fc3b6c9-7ca2-e860-904f-5961a4643da9/mzaf_11891323176959043970.plus.aac.p.m4a"
   },
   {
@@ -786,7 +886,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony63/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/49/a5/34/49a5348c-e378-0433-34cf-b35c08242438/886443170186.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/25/73/48/257348e6-64dc-c07e-0764-e839f9497e5d/mzaf_10602879035819482013.plus.aac.p.m4a"
   },
   {
@@ -796,7 +896,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony64/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/54/3f/a7/543fa7d1-700b-f37c-bf0c-faa452791966/5099750829028.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/b5/ea/99b5eac9-f789-5a26-a1c0-b32ae9c9d729/mzaf_10806018209387166476.plus.aac.p.m4a"
   },
   {
@@ -806,7 +906,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony65/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/19/43/e7/1943e723-9bb5-5e52-6631-9a62a4bda99f/10UMGIM03535.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d9/47/8d/d9478dfe-5d07-b2be-ffc2-2dca91b9a50d/mzaf_3777674077925627605.plus.aac.p.m4a"
   },
   {
@@ -816,7 +916,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony66/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/51/5c/29/515c2978-55f9-4c97-3107-9efc7752d41a/mzi.qrzhzpuc.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d7/dd/8b/d7dd8b02-1dec-f9aa-0762-47de6973460b/mzaf_9134420502065068087.plus.aac.p.m4a"
   },
   {
@@ -826,7 +926,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony67/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6d/fd/0a/6dfd0af0-1ca8-dce6-f899-ac54f73e3d55/mzi.cljkxluo.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/28/13/e8/2813e87a-0c76-8050-597a-ade49b0fe77f/mzaf_18081175160122836074.plus.aac.p.m4a"
   },
   {
@@ -836,7 +936,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony68/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/04/28/88/0428883a-afa5-9b51-37b9-df41ee509b5c/mzi.mygxcbqz.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a3/09/9a/a3099aab-0012-6f63-3e31-7ef02baf5002/mzaf_7683194943873526546.plus.aac.p.m4a"
   },
   {
@@ -846,7 +946,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony69/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/91/9d/fc/mzi.qmqmneup.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/50/04/44/5004447d-5173-66e0-c111-c6b616215c16/mzaf_11738256404896026208.plus.aac.p.m4a"
   },
   {
@@ -856,7 +956,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony70/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/91/9d/fc/mzi.qmqmneup.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b6/20/b7/b620b7ac-e36f-0ef9-e5d9-918c5a1fa1b0/mzaf_8697597772889293148.plus.aac.p.m4a"
   },
   {
@@ -886,7 +986,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony73/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/46/64/ad/4664adb1-b5a0-39f6-3b5a-1a0cd9cbbb3e/4894859226799.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a0/6b/fb/a06bfbeb-8a0e-a6a4-1bee-5f9b60f366f0/mzaf_6787456009614434421.plus.aac.p.m4a"
   },
   {
@@ -896,7 +996,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony74/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/58/8f/06/588f06d5-eafb-1020-174b-5bbdc1cdb4cc/mzi.oczobyjt.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/86/a1/9d/86a19d49-290c-996f-d450-02b981e65c12/mzaf_11599632864646193799.plus.aac.p.m4a"
   },
   {
@@ -926,7 +1026,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony77/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/bc/e0/e5/mzi.mzfgcpgj.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/2d/d7/1d2dd774-0bb2-2a60-3a1c-3d28932ccba1/mzaf_17813447189860212946.plus.aac.p.m4a"
   },
   {
@@ -936,7 +1036,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony78/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d6/cf/21/d6cf217f-5624-e95d-0bc2-ef2f3fcff290/mzi.ieqegpxg.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f5/a0/6d/f5a06d43-cc2f-4df4-4e21-7d2686c6f134/mzaf_17675232290288509249.plus.aac.p.m4a"
   },
   {
@@ -946,7 +1046,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony79/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/07/51/39/075139cf-7910-68c9-7c91-c6c000718794/mzi.vmzravef.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/14/a2/db/14a2db6b-f798-9973-c858-608ffab6455d/mzaf_5254891004187359022.plus.aac.p.m4a"
   },
   {
@@ -956,7 +1056,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony80/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/8c/95/48/8c954827-09fd-17fb-8ec8-f6e959bab106/mzi.vpnvddqr.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0c/92/43/0c92434c-91dc-a4ab-6228-e8e007de9564/mzaf_7504094442999028617.plus.aac.p.m4a"
   },
   {
@@ -966,7 +1066,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "輕快",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony81/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/01/e8/5601e8f0-f66a-357e-e2dd-7ed4016a203a/mzi.vlvftogr.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/43/dc/ee43dc35-53d4-4e67-47d7-9510d80c0f76/mzaf_14574309864219078816.plus.aac.p.m4a"
   },
   {
@@ -976,7 +1076,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "輕快",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony82/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/49/b3/d1/49b3d112-73e7-d758-49f6-b2951b0c1fd3/dj.bpkfhlxk.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bf/d0/ec/bfd0ec13-5da1-4138-c174-95cc1f160c82/mzaf_12207687574904333313.plus.aac.p.m4a"
   },
   {
@@ -1006,7 +1106,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony85/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/e7/93/bc/mzi.kqvoodto.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/75/e1/61/75e161e2-c53b-01e5-7c60-6ac46a39088e/mzaf_4069956401067725071.plus.aac.p.m4a"
   },
   {
@@ -1016,7 +1116,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony86/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/04/0d/f7/mzi.eepbjrxb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8a/d9/fd/8ad9fd32-01af-f373-46d4-a1030ae00fd6/mzaf_6720465195218817943.plus.aac.p.m4a"
   },
   {
@@ -1026,7 +1126,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony87/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e6/e0/91/e6e0914a-ef90-2f4f-0fe7-3529f6232a01/mzi.svixalbz.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/33/a9/df33a97e-8049-de04-517b-6becc4d3d037/mzaf_3460289279573172523.plus.aac.p.m4a"
   },
   {
@@ -1036,7 +1136,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony88/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a2/f6/d2/a2f6d2ce-7a44-3c87-8774-556d6f30c565/dj.uxjggljv.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0f/41/98/0f419873-6823-9abf-103f-f3a85f713325/mzaf_17608574902624931862.plus.aac.p.m4a"
   },
   {
@@ -1056,7 +1156,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony90/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/e5/57/87/e55787b1-54d0-0c37-d72d-0f56c74f19e7/886443625020.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/db/e7/50/dbe750b6-ef51-30f8-adc5-8a4ee2190889/mzaf_250309415100156273.plus.aac.p.m4a"
   },
   {
@@ -1076,7 +1176,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony92/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/e6/fb/d9e6fb64-51bb-f91e-f7e7-0d4969f898a5/884977313550.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/77/07/27/7707275b-ba7f-0889-72a2-94e9e822572d/mzaf_18386160249744541319.plus.aac.p.m4a"
   },
   {
@@ -1086,7 +1186,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony93/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/df/b9/9b/dfb99ba5-eca3-4355-d3a9-c306cf07df8d/825646143108.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/98/74/f9/9874f9dc-3774-1ec3-d07d-12bea3ca2381/mzaf_14495317873290155816.plus.aac.p.m4a"
   },
   {
@@ -1096,8 +1196,9 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony94/300/300",
-    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/30/37/98/30379814-7860-0889-dcb8-d7ddc433212e/mzaf_16990360185037820787.plus.aac.p.m4a"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e6/e0/91/e6e0914a-ef90-2f4f-0fe7-3529f6232a01/mzi.svixalbz.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/30/37/98/30379814-7860-0889-dcb8-d7ddc433212e/mzaf_16990360185037820787.plus.aac.p.m4a",
+    "album_search_term": "J-Game"
   },
   {
     "id": 95,
@@ -1106,7 +1207,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony95/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/e6/fb/d9e6fb64-51bb-f91e-f7e7-0d4969f898a5/884977313550.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/8e/ff/768effc5-97c4-695b-0eeb-90c87e4034ab/mzaf_15412782134961942412.plus.aac.p.m4a"
   },
   {
@@ -1116,7 +1217,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony96/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e6/e0/91/e6e0914a-ef90-2f4f-0fe7-3529f6232a01/mzi.svixalbz.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c6/2c/92/c62c9245-5795-b5d0-75b7-b386c2772ffc/mzaf_6347943038441296898.plus.aac.p.m4a"
   },
   {
@@ -1126,7 +1227,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "輕快",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony97/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a2/f6/d2/a2f6d2ce-7a44-3c87-8774-556d6f30c565/dj.uxjggljv.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/76/d7/b1/76d7b103-a466-31a3-d3f7-43e5c3bb5f4f/mzaf_8499867377798423984.plus.aac.p.m4a"
   },
   {
@@ -1136,7 +1237,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony98/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/e6/fb/d9e6fb64-51bb-f91e-f7e7-0d4969f898a5/884977313550.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/94/1b/44941b6e-9199-6454-8cb4-5f6e6ff37f79/mzaf_5388208469385089738.plus.aac.p.m4a"
   },
   {
@@ -1146,7 +1247,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony99/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/0c/a7/2e/mzi.txtyrvfg.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/db/68/65/db686534-d741-7128-f397-2d80d965e807/mzaf_15298948877675738514.plus.aac.p.m4a"
   },
   {
@@ -1156,7 +1257,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony100/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/0f/df/d5/0fdfd59c-2d10-47f7-f8af-50a078879cdb/886970248426.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5e/3a/16/5e3a1605-5717-4cea-206f-b90b8ad7670a/mzaf_6793353445625287444.plus.aac.p.m4a"
   },
   {
@@ -1186,7 +1287,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony103/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/83/48/ee/8348ee1b-4543-38e9-45fb-02c1f8556364/5051865520726.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/83/86/1e/83861e22-c277-d231-9270-e90bd0c8cc28/mzaf_17124966460844948968.plus.aac.p.m4a"
   },
   {
@@ -1205,7 +1306,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony105/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/a8/3e/c2/mzi.btlytrsj.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/3a/3f/c2/3a3fc2b2-5b48-3b5b-a536-50e2f58f5aef/mzaf_10621041315015039636.plus.aac.p.m4a"
   },
   {
@@ -1215,7 +1316,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony106/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/f3/2c/1a/f32c1a08-f7dc-fb86-0366-7b9ddff7f256/cover.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/d6/09/58d609cb-5d09-6a3c-f76f-39fac6047e0e/mzaf_12651442601664634766.plus.aac.p.m4a"
   },
   {
@@ -1225,7 +1326,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony107/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/43/62/bb/4362bb86-5f5b-80f0-5547-a42967692972/23UMGIM15096.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/68/91/9c/68919c48-492d-a2d3-657f-ee3d24537f7e/mzaf_5136213134197419844.plus.aac.p.m4a"
   },
   {
@@ -1235,7 +1336,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony108/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/35/ac/f835aceb-ec67-69e3-fd68-9de33dd49240/dj.glnidttf.jpg/600x600bb.jpg"
   },
   {
     "id": 109,
@@ -1254,7 +1355,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony110/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/70/af/ae/mzi.lqyisqyi.jpg/600x600bb.jpg"
   },
   {
     "id": 111,
@@ -1263,7 +1364,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony111/300/300",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/70/af/ae/mzi.lqyisqyi.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d2/e1/59/d2e159a3-b87b-a532-083b-4f269617a4fa/mzaf_390825474058782296.plus.aac.p.m4a"
   }
 ];
@@ -1331,14 +1432,14 @@ export function getSongStats() {
     byTempo: {},
     byVocal: {},
   };
-  
+
   currentSongs.forEach(song => {
     const tempo = song.tempo || song.mood;
     const vocal = song.vocal || song.voice;
     stats.byTempo[tempo] = (stats.byTempo[tempo] || 0) + 1;
     stats.byVocal[vocal] = (stats.byVocal[vocal] || 0) + 1;
   });
-  
+
   return stats;
 }
 
