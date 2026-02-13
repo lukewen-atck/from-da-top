@@ -76,6 +76,13 @@ export function ResultCard({ song, isNew = false, onClose }) {
       newAudio.volume = 0.5;
       newAudio.onended = () => setIsPlaying(false);
       setAudio(newAudio);
+
+      // 如果是新抽到的結果，自動播放
+      if (isNew) {
+        newAudio.play()
+          .then(() => setIsPlaying(true))
+          .catch(e => console.warn("Auto-play blocked:", e));
+      }
     }
     return () => {
       if (audio) {
@@ -83,6 +90,7 @@ export function ResultCard({ song, isNew = false, onClose }) {
         audio.currentTime = 0;
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [song]);
 
   const togglePlay = (e) => {
