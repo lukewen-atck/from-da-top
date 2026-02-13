@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { adminResetUser, adminAssignSong, adminUpdateUser } from '../app/admin/actions';
+import { adminResetUser, adminAssignSong, adminUpdateUser, adminDeleteUser } from '../app/admin/actions';
 import { CyberButton, CyberWindow } from './Win95Window';
 
 export default function AdminDashboard({ initialData }: { initialData: any }) {
@@ -68,6 +68,16 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
             alert('使用者重置成功');
         } else {
             alert('操作失敗: ' + res.message);
+        }
+    };
+
+    const handleDeleteUser = async (uid: string) => {
+        if (!confirm(`⚠️ 危險操作 ⚠️\n確定要「刪除」使用者 ${uid} 嗎？\n此操作無法復原，且會直接移除該使用者的所有資料！`)) return;
+        const res = await adminDeleteUser(uid);
+        if (res.success) {
+            alert('使用者已刪除');
+        } else {
+            alert('刪除失敗: ' + res.message);
         }
     };
 
@@ -236,6 +246,14 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
                                                 type="button"
                                             >
                                                 指派
+                                            </button>
+                                            <button
+                                                onClick={() => handleDeleteUser(u.uid)}
+                                                className="px-2 py-1 border border-red-700 text-red-700 hover:bg-red-700 hover:text-white text-xs"
+                                                type="button"
+                                                title="刪除此使用者"
+                                            >
+                                                刪除
                                             </button>
                                         </td>
                                     </tr>

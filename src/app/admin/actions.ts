@@ -35,26 +35,27 @@ export async function getAdminData() {
 // 2. Reset User
 export async function adminResetUser(uid: string) {
     try {
-        await db.transaction(async (tx) => {
-            // 1. Find user to get current song
-            const user = await tx.query.users.findFirst({
-                where: eq(users.uid, uid),
-            });
+        // [NEON-HTTP-DRIVER-FIX]: Removed transaction wrapper as it is not supported in HTTP driver.
+        // Executing sequentially.
 
-            if (!user) throw new Error('User not found');
-
-            // 2. If user has a song, free it
-            if (user.selected_song_id) {
-                await tx.update(songs)
-                    .set({ is_taken: false, taken_by: null })
-                    .where(eq(songs.id, user.selected_song_id));
-            }
-
-            // 3. Reset user
-            await tx.update(users)
-                .set({ selected_song_id: null, has_rerolled: false })
-                .where(eq(users.uid, uid));
+        // 1. Find user to get current song
+        const user = await db.query.users.findFirst({
+            where: eq(users.uid, uid),
         });
+
+        if (!user) throw new Error('User not found');
+
+        // 2. If user has a song, free it
+        if (user.selected_song_id) {
+            await db.update(songs)
+                .set({ is_taken: false, taken_by: null })
+                .where(eq(songs.id, user.selected_song_id));
+        }
+
+        // 3. Reset user
+        await db.update(users)
+            .set({ selected_song_id: null, has_rerolled: false })
+            .where(eq(users.uid, uid));
 
         revalidatePath('/admin');
         return { success: true };
@@ -67,42 +68,42 @@ export async function adminResetUser(uid: string) {
 // 3. Assign Song
 export async function adminAssignSong(uid: string, songId: number) {
     try {
-        await db.transaction(async (tx) => {
-            // 1. Check if song exists
-            const song = await tx.query.songs.findFirst({
-                where: eq(songs.id, songId),
-            });
+        // [NEON-HTTP-DRIVER-FIX]: Removed transaction wrapper.
 
-            if (!song) throw new Error('找不到該歌曲 (Song ID not found)');
-
-            // 2. Clear user's current song if any
-            const user = await tx.query.users.findFirst({
-                where: eq(users.uid, uid),
-            });
-
-            if (user?.selected_song_id) {
-                await tx.update(songs)
-                    .set({ is_taken: false, taken_by: null })
-                    .where(eq(songs.id, user.selected_song_id));
-            }
-
-            // 3. If target song is taken by someone else, we force take it
-            if (song.is_taken && song.taken_by && song.taken_by !== uid) {
-                await tx.update(users)
-                    .set({ selected_song_id: null })
-                    .where(eq(users.uid, song.taken_by));
-            }
-
-            // 4. Update Song
-            await tx.update(songs)
-                .set({ is_taken: true, taken_by: uid })
-                .where(eq(songs.id, songId));
-
-            // 5. Update User
-            await tx.update(users)
-                .set({ selected_song_id: songId })
-                .where(eq(users.uid, uid));
+        // 1. Check if song exists
+        const song = await db.query.songs.findFirst({
+            where: eq(songs.id, songId),
         });
+
+        if (!song) throw new Error('找不到該歌曲 (Song ID not found)');
+
+        // 2. Clear user's current song if any
+        const user = await db.query.users.findFirst({
+            where: eq(users.uid, uid),
+        });
+
+        if (user?.selected_song_id) {
+            await db.update(songs)
+                .set({ is_taken: false, taken_by: null })
+                .where(eq(songs.id, user.selected_song_id));
+        }
+
+        // 3. If target song is taken by someone else, we force take it
+        if (song.is_taken && song.taken_by && song.taken_by !== uid) {
+            await db.update(users)
+                .set({ selected_song_id: null })
+                .where(eq(users.uid, song.taken_by));
+        }
+
+        // 4. Update Song
+        await db.update(songs)
+            .set({ is_taken: true, taken_by: uid })
+            .where(eq(songs.id, songId));
+
+        // 5. Update User
+        await db.update(users)
+            .set({ selected_song_id: songId })
+            .where(eq(users.uid, uid));
 
         revalidatePath('/admin');
         return { success: true };
@@ -124,5 +125,35 @@ export async function adminUpdateUser(uid: string, name: string, note: string) {
     } catch (error: any) {
         console.error('adminUpdateUser error:', error);
         return { success: false, message: error.message || 'Update failed' };
+    }
+}
+
+// 5. Delete User
+export async function adminDeleteUser(uid: string) {
+    try {
+        // [NEON-HTTP-DRIVER-FIX]: Removed transaction wrapper.
+
+        // 1. Check if user exists
+        const user = await db.query.users.findFirst({
+            where: eq(users.uid, uid),
+        });
+
+        if (!user) throw new Error('User not found');
+
+        // 2. If user has a song, free it first
+        if (user.selected_song_id) {
+            await db.update(songs)
+                .set({ is_taken: false, taken_by: null })
+                .where(eq(songs.id, user.selected_song_id));
+        }
+
+        // 3. Delete user
+        await db.delete(users).where(eq(users.uid, uid));
+
+        revalidatePath('/admin');
+        return { success: true };
+    } catch (error: any) {
+        console.error('adminDeleteUser error:', error);
+        return { success: false, message: error.message || 'Delete failed' };
     }
 }
