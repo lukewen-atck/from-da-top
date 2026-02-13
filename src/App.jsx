@@ -5,7 +5,6 @@ import { CDPlayer } from './components/CDPlayer';
 import { ResultCard } from './components/ResultCard';
 import { TaskModal } from './components/TaskModal';
 import { StyleSelector } from './components/StyleSelector';
-import { OtpLogin } from './components/OtpLogin';
 import { Win95Window, Win95Button, Win95ProgressBar } from './components/Win95Window';
 
 function App() {
@@ -39,7 +38,7 @@ function App() {
   const [isBooting, setIsBooting] = useState(true);
   const [authUser, setAuthUser] = useState(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
-  
+
   // 風格篩選狀態
   const [selectedMood, setSelectedMood] = useState(null);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -76,7 +75,7 @@ function App() {
         setIsNewResult(false);
       }
     }
-    
+
     if (userData?.assignedTaskId) {
       setCurrentTask(getAssignedTask());
     }
@@ -120,13 +119,13 @@ function App() {
   // 隨機抽取歌曲
   const drawSong = useCallback(() => {
     if (isSpinning) return;
-    
+
     setIsSpinning(true);
     setShowResult(false);
     setIsNewResult(true);
 
     const availableSongs = filterSongs(selectedMood, selectedVoice);
-    
+
     if (availableSongs.length === 0) {
       console.error('沒有符合條件的歌曲');
       setIsSpinning(false);
@@ -139,13 +138,13 @@ function App() {
     setTimeout(() => {
       setCurrentSong(selectedSong);
       setIsSpinning(false);
-      
+
       if (!hasDrawn) {
         saveDrawResult(selectedSong.id);
       } else if (canSecondDraw) {
         useSecondDraw(selectedSong.id);
       }
-      
+
       setTimeout(() => {
         setShowResult(true);
       }, 300);
@@ -191,12 +190,12 @@ function App() {
           <h2 className="text-xl md:text-2xl font-bold text-neon-purple neon-text font-y2k tracking-wider">
             CHALLENGE
           </h2>
-          
+
           {/* 副標題 */}
           <div className="text-metal-silver font-y2k text-sm mt-3 tracking-wide">
             金曲翻唱挑戰系統
           </div>
-          
+
           {/* 版本號 */}
           <div className="text-metal-silver/50 font-mono text-xs mt-1">
             v2.0.1.5
@@ -256,10 +255,10 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a0a2e] to-[#0a0a0a] relative overflow-hidden">
       {/* 掃描線效果 */}
       <div className="scanlines" />
-      
+
       {/* 背景網格 */}
       <div className="absolute inset-0 retro-grid opacity-20" />
-      
+
       {/* 背景光暈 */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 bg-neon-purple/15 rounded-full blur-3xl" />
 
@@ -289,18 +288,18 @@ function App() {
         <main className="flex-1 flex flex-col items-center justify-start gap-4 pb-16">
           {/* CD 播放器 - 只在非結果狀態顯示 */}
           {(!showResult || isSpinning) && (
-            <CDPlayer 
+            <CDPlayer
               isSpinning={isSpinning}
               currentSong={currentSong}
-              onAnimationEnd={() => {}}
+              onAnimationEnd={() => { }}
             />
           )}
 
           {/* 結果卡片 */}
           {showResult && currentSong && !isSpinning && (
             <div className="w-full max-w-sm animate-float">
-              <ResultCard 
-                song={currentSong} 
+              <ResultCard
+                song={currentSong}
                 isNew={isNewResult}
               />
             </div>
@@ -327,7 +326,7 @@ function App() {
                     🎯 完成任務解鎖第二次機會
                   </p>
                 </div>
-                
+
                 <Win95Button
                   onClick={handleStartTaskFlow}
                   variant="neon"
@@ -346,7 +345,7 @@ function App() {
                     📋 {currentTask?.name}
                   </p>
                 </div>
-                
+
                 <Win95Button
                   onClick={handleContinueTask}
                   variant="primary"
@@ -405,7 +404,7 @@ function App() {
           <div className="text-metal-silver/30 text-xs font-mono">
             © 2026 T@P GAMIFICATION // ARTICHOKE ARK
           </div>
-          
+
           {import.meta.env.DEV && (
             <button
               onClick={resetUser}
@@ -436,16 +435,10 @@ function App() {
         task={currentTask}
         song={currentSong}
         onTaskComplete={handleTaskComplete}
-        onStartTask={() => {}}
+        onStartTask={() => { }}
       />
 
       {/* OTP 登入 */}
-      {isAuthReady && !authUser && (
-        <OtpLogin
-          apiBase={authApiBase}
-          onSuccess={(account) => setAuthUser(account)}
-        />
-      )}
     </div>
   );
 }

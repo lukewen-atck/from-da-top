@@ -2,48 +2,51 @@ import React from 'react';
 
 export function Win95Window({ title, children, onClose, className = '' }) {
   return (
-    <div className={`win95-window w-full max-w-md mx-auto ${className}`}>
-      {/* Title Bar */}
-      <div className="win95-title-bar">
+    <div className={`relative w-full max-w-md mx-auto border-2 border-neon-green bg-black/80 backdrop-blur-sm ${className}`}>
+      {/* Title Bar - Cyber Style */}
+      <div className="flex justify-between items-center bg-neon-green px-2 py-1 select-none">
         <div className="flex items-center gap-2">
-          <span className="text-xs">🎵</span>
-          <span className="text-sm tracking-wider">{title}</span>
+          <span className="text-black text-xs animate-pulse">■</span>
+          <span className="text-black font-bold font-mono tracking-widest text-sm uppercase">{title}</span>
         </div>
         <div className="flex gap-1">
-          <button className="win95-btn px-2 py-0 text-xs leading-none">_</button>
-          <button className="win95-btn px-2 py-0 text-xs leading-none">□</button>
           {onClose && (
-            <button 
+            <button
               onClick={onClose}
-              className="win95-btn px-2 py-0 text-xs leading-none hover:bg-red-500"
+              className="text-black font-bold hover:bg-black hover:text-neon-green px-1 leading-none transition-colors"
             >
               ✕
             </button>
           )}
         </div>
       </div>
-      
+
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 border-t border-neon-green/30">
         {children}
       </div>
+
+      {/* Decorative Corner */}
+      <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-neon-green" />
     </div>
   );
 }
 
 export function Win95Button({ children, onClick, disabled, className = '', variant = 'default' }) {
-  const baseStyles = "win95-btn font-y2k text-lg transition-all";
+  // Sharp edges, neon borders, hover invert
+  const baseStyles = "relative font-mono font-bold py-2 px-4 transition-all duration-100 disabled:opacity-30 disabled:cursor-not-allowed active:translate-y-1";
+
   const variants = {
-    default: "bg-[#c0c0c0] text-black",
-    primary: "bg-gradient-to-b from-[#e0e0e0] to-[#a0a0a0] text-black",
-    neon: "bg-black text-neon-purple border-neon-purple hover:shadow-[0_0_20px_#b829dd]",
+    default: "bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-black shadow-[0_0_10px_rgba(189,0,255,0.2)] hover:shadow-[0_0_20px_rgba(189,0,255,0.6)]",
+    primary: "bg-neon-green border border-neon-green text-black hover:bg-transparent hover:text-neon-green shadow-[0_0_10px_rgba(0,255,65,0.2)] hover:shadow-[0_0_20px_rgba(0,255,65,0.6)]",
+    neon: "bg-black text-neon-blue border border-neon-blue hover:bg-neon-blue hover:text-black shadow-[0_0_10px_rgba(0,255,255,0.2)]",
   };
 
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
+      className={`${baseStyles} ${variants[variant] || variants.default} ${className}`}
     >
       {children}
     </button>
@@ -52,14 +55,18 @@ export function Win95Button({ children, onClick, disabled, className = '', varia
 
 export function Win95ProgressBar({ progress, className = '' }) {
   return (
-    <div className={`bg-white border-2 border-t-[#808080] border-l-[#808080] border-b-white border-r-white h-6 ${className}`}>
-      <div 
-        className="h-full bg-[#000080] transition-all duration-100"
+    <div className={`w-full h-4 border border-neon-green bg-black/50 p-0.5 ${className}`}>
+      <div
+        className="h-full bg-neon-green shadow-[0_0_10px_rgba(0,255,65,0.5)] transition-all duration-100"
         style={{ width: `${progress}%` }}
       />
     </div>
   );
 }
+
+export const CyberWindow = Win95Window;
+export const CyberButton = Win95Button;
+export const CyberProgressBar = Win95ProgressBar;
 
 export default Win95Window;
 

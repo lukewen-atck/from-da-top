@@ -1,0 +1,36 @@
+
+import { pgTable, text, serial, integer, boolean, timestamp } from 'drizzle-orm/pg-core';
+import { relations } from 'drizzle-orm';
+
+export const users = pgTable('users', {
+    uid: text('uid').primaryKey(),
+    has_rerolled: boolean('has_rerolled').default(false).notNull(),
+    selected_song_id: integer('selected_song_id').references(() => songs.id),
+    created_at: timestamp('created_at').defaultNow().notNull(),
+});
+
+export const usersRelations = relations(users, ({ one }) => ({
+    selectedSong: one(songs, {
+        fields: [users.selected_song_id],
+        references: [songs.id],
+    }),
+}));
+
+export const songs = pgTable('songs', {
+    id: serial('id').primaryKey(),
+    title: text('title').notNull(),
+    artist: text('artist').notNull(),
+    year: text('year'),
+    tempo: text('tempo'),
+    vocal: text('vocal'),
+    albumArt: text('album_art'),
+    is_taken: boolean('is_taken').default(false).notNull(),
+    taken_by: text('taken_by').references(() => users.uid),
+});
+
+export const songsRelations = relations(songs, ({ one }) => ({
+    takenBy: one(users, {
+        fields: [songs.taken_by],
+        references: [users.uid],
+    }),
+}));

@@ -32,48 +32,46 @@ export function CDPlayer({ isSpinning, currentSong, onAnimationEnd }) {
 
   return (
     <div className="relative flex flex-col items-center">
-      {/* 歌曲顯示區域 - 簡化版 iPod 風格 */}
-      <div className="w-full max-w-xs">
-        <div className="bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] rounded-xl p-3 border border-[#444] shadow-xl">
-          {/* 螢幕區域 */}
-          <div className={`bg-gradient-to-b from-[#8ec2f7] to-[#5fa8e8] rounded-lg p-3 min-h-[80px] relative overflow-hidden ${isSpinning ? 'animate-pulse' : ''}`}>
-            {/* CD 動畫在轉盤模式 */}
-            {isSpinning && (
-              <div className="absolute top-2 right-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-metal-silver to-gray-400 animate-[cd-spin_0.3s_linear_infinite] border-2 border-gray-500">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/30 to-cyan-500/30" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#333] rounded-full" />
-                </div>
-              </div>
-            )}
-            
-            {showSong ? (
-              <div className={`text-black ${isSpinning ? 'song-flashing' : ''}`}>
-                <div className="text-xs text-[#333] mb-1 font-bold">
-                  {isSpinning ? '🎰 SHUFFLE...' : '🎵 NOW PLAYING'}
-                </div>
-                <div className="font-bold text-lg truncate pr-10">{showSong.title}</div>
-                <div className="text-sm text-[#444] truncate">{showSong.artist}</div>
-                <div className="flex items-center gap-2 mt-1 text-xs text-[#555]">
-                  <span className="bg-black/10 px-2 py-0.5 rounded">{showSong.year}</span>
-                  <span className="bg-black/10 px-2 py-0.5 rounded">{showSong.tempo || showSong.mood}</span>
-                </div>
-              </div>
-            ) : (
-              <div className="text-black/50 text-center py-2">
-                <div className="text-xl mb-1">🎵</div>
-                <div className="text-xs">等待抽選...</div>
-              </div>
-            )}
-          </div>
+      {/* 歌曲顯示區域 - Cyber Industrial Style */}
+      <div className="w-full max-w-xs z-10 relative">
+        {/* Exterior Frame */}
+        <div className="bg-black border border-metal-silver/50 p-2 relative">
+          <div className="absolute -top-1 -left-1 w-2 h-2 bg-metal-silver" />
+          <div className="absolute -top-1 -right-1 w-2 h-2 bg-metal-silver" />
+          <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-metal-silver" />
+          <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-metal-silver" />
 
-          {/* 簡化控制區 */}
-          <div className="flex justify-center items-center gap-4 mt-3 text-[#666]">
-            <span className="text-sm">◀◀</span>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#555] to-[#333] flex items-center justify-center border border-[#666]">
-              <span className="text-xs">▶</span>
+          <div className="bg-[#050505] border border-neon-green/30 p-4 relative overflow-hidden h-[180px]">
+            {/* Scanning Line Animation */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-green/10 to-transparent h-[20%] w-full animate-[scan_2s_linear_infinite] pointer-events-none" />
+
+            {/* CD Disc - Animated only when spinning */}
+            {isSpinning && (
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none">
+                <div className="w-[140px] h-[140px] rounded-full border-2 border-neon-green/30 animate-[spin_1s_linear_infinite]" />
+              </div>
+            )}
+
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-2">
+              {showSong ? (
+                <div className={`text-white transition-opacity duration-100 ${isSpinning ? 'opacity-80' : 'opacity-100'}`}>
+                  <div className="text-[10px] text-neon-green font-mono mb-2 tracking-widest border-b border-neon-green/30 pb-1 w-full">
+                    {isSpinning ? '>> 資料庫搜尋中...' : '>> 目標已鎖定'}
+                  </div>
+                  <div className="font-bold text-2xl truncate text-white uppercase tracking-wider">{showSong.title}</div>
+                  <div className="text-sm text-metal-silver font-mono">{showSong.artist}</div>
+                  <div className="flex justify-center items-center gap-2 mt-3">
+                    <span className="text-[10px] bg-neon-purple/20 text-neon-purple px-1 border border-neon-purple/30">{showSong.year}</span>
+                    <span className="text-[10px] bg-neon-green/20 text-neon-green px-1 border border-neon-green/30">{showSong.tempo || showSong.mood}</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-metal-silver/30 font-mono text-xs">
+                  <div>[ 等待指令 ]</div>
+                  <div className="mt-2 text-[40px] opacity-20">💿</div>
+                </div>
+              )}
             </div>
-            <span className="text-sm">▶▶</span>
           </div>
         </div>
       </div>
