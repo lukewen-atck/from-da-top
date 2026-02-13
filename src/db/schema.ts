@@ -6,6 +6,8 @@ export const users = pgTable('users', {
     uid: text('uid').primaryKey(),
     has_rerolled: boolean('has_rerolled').default(false).notNull(),
     selected_song_id: integer('selected_song_id'),
+    name: text('name'),
+    note: text('note'),
     created_at: timestamp('created_at').defaultNow().notNull(),
 });
 

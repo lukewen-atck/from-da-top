@@ -58,9 +58,9 @@ export async function adminResetUser(uid: string) {
 
         revalidatePath('/admin');
         return { success: true };
-    } catch (error) {
+    } catch (error: any) {
         console.error('adminResetUser error:', error);
-        return { success: false, message: 'Reset failed' };
+        return { success: false, message: error.message || 'Reset failed' };
     }
 }
 
@@ -73,7 +73,7 @@ export async function adminAssignSong(uid: string, songId: number) {
                 where: eq(songs.id, songId),
             });
 
-            if (!song) throw new Error('Song not found');
+            if (!song) throw new Error('找不到該歌曲 (Song ID not found)');
 
             // 2. Clear user's current song if any
             const user = await tx.query.users.findFirst({
@@ -86,9 +86,7 @@ export async function adminAssignSong(uid: string, songId: number) {
                     .where(eq(songs.id, user.selected_song_id));
             }
 
-            // 3. If target song is taken by someone else, we force take it (or maybe clear that user?)
-            // Requirement says: "Ignore rules, force bind". 
-            // So if Song A is taken by User B, we need to clear User B's selection first.
+            // 3. If target song is taken by someone else, we force take it
             if (song.is_taken && song.taken_by && song.taken_by !== uid) {
                 await tx.update(users)
                     .set({ selected_song_id: null })
@@ -108,8 +106,23 @@ export async function adminAssignSong(uid: string, songId: number) {
 
         revalidatePath('/admin');
         return { success: true };
-    } catch (error) {
+    } catch (error: any) {
         console.error('adminAssignSong error:', error);
-        return { success: false, message: 'Assign failed' };
+        return { success: false, message: error.message || 'Assign failed' };
+    }
+}
+
+// 4. Update User Profile (Name/Note)
+export async function adminUpdateUser(uid: string, name: string, note: string) {
+    try {
+        await db.update(users)
+            .set({ name, note })
+            .where(eq(users.uid, uid));
+
+        revalidatePath('/admin');
+        return { success: true };
+    } catch (error: any) {
+        console.error('adminUpdateUser error:', error);
+        return { success: false, message: error.message || 'Update failed' };
     }
 }
