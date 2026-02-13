@@ -174,7 +174,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
                             <tbody className="divide-y divide-white/5">
                                 {users.map((u: any) => (
                                     <tr key={u.uid} className="hover:bg-white/5 transition-colors">
-                                        <td className="p-3 font-bold text-white text-xs">{u.uid.substring(0, 8)}...</td>
+                                        <td className="p-3 font-bold text-white text-xs">{u.uid}</td>
 
                                         {/* Name & Note Editing */}
                                         {editingUser === u.uid ? (
@@ -294,7 +294,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
                                                 }
                                             </td>
                                             <td className="p-3 font-mono text-xs">
-                                                {s.taken_by ? s.taken_by.substring(0, 8) + '...' : '-'}
+                                                {s.taken_by || '-'}
                                             </td>
                                         </tr>
                                     ))}
