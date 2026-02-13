@@ -3,10 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { CDPlayer } from './CDPlayer';
 import { ResultCard } from './ResultCard';
-import { CyberButton, CyberWindow, CyberProgressBar } from './Win95Window'; // Using new Cyber aliases
+import { CyberButton, CyberWindow, CyberProgressBar } from './Win95Window';
 import { StyleSelector } from './StyleSelector';
 import { getSongStats } from '../data/songs';
 import { drawSong, confirmSong, executeReroll } from '../app/actions';
+import { CyberToast } from './CyberToast';
 
 // Tasks for reroll (Interview Style)
 const REROLL_TASKS = [
@@ -39,6 +40,15 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     // Boot Animation
     const [isBooting, setIsBooting] = useState(true);
     const [bootProgress, setBootProgress] = useState(0);
+
+    // Loading & Toast State
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [toast, setToast] = useState<{ message: string, type: 'success' | 'error' | 'info' } | null>(null);
+
+    const showToast = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
+        setToast({ message, type });
+        setTimeout(() => setToast(null), 3500);
+    };
 
     const songStats = getSongStats();
 
@@ -86,7 +96,7 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
             const result = await drawSong(uid, selectedMood, selectedVoice);
 
             if (result.error || !result.song) {
-                alert('抽選失敗: ' + (result.error || 'Unknown error'));
+                showToast('抽選失敗: ' + (result.error || 'Unknown error'), 'error');
                 setIsSpinning(false);
                 return;
             }
@@ -101,24 +111,33 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
         } catch (e) {
             console.error(e);
             setIsSpinning(false);
+            showToast('系統錯誤，請重試', 'error');
         }
     };
 
     const handleConfirmSong = async () => {
-        if (!currentSong) return;
-        const res = await confirmSong(currentSong.id, uid);
-        if (res.success) {
-            // Update local state to locked
-            setUser({ ...user, selected_song_id: currentSong.id });
-            setLockedSong(currentSong);
-        } else {
-            alert('確認失敗: ' + res.message);
+        if (!currentSong || isProcessing) return;
+        setIsProcessing(true);
+        try {
+            const res = await confirmSong(currentSong.id, uid);
+            if (res.success) {
+                showToast('歌曲確認成功！', 'success');
+                // Update local state to locked
+                setUser({ ...user, selected_song_id: currentSong.id });
+                setLockedSong(currentSong);
+            } else {
+                showToast('確認失敗: ' + res.message, 'error');
+            }
+        } catch (e) {
+            showToast('連線錯誤，請重試', 'error');
+        } finally {
+            setIsProcessing(false);
         }
     };
 
     const handleRequestReroll = () => {
         if (user.has_rerolled) {
-            alert('你已經使用過換歌機會囉！');
+            showToast('你已經使用過換歌機會囉！', 'info');
             return;
         }
         // Pick random task
@@ -128,17 +147,25 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     };
 
     const handleTaskComplete = async () => {
-        // Call server action to mark reroll used
-        const res = await executeReroll(uid);
-        if (res.success) {
-            setUser({ ...user, has_rerolled: true });
-            setShowTaskModal(false);
-            setShowResult(false);
-            setCurrentSong(null);
+        if (isProcessing) return;
+        setIsProcessing(true);
+        try {
+            // Call server action to mark reroll used
+            const res = await executeReroll(uid);
+            if (res.success) {
+                setUser({ ...user, has_rerolled: true });
+                setShowTaskModal(false);
+                setShowResult(false);
+                setCurrentSong(null);
 
-            alert('任務完成！你可以重新抽選一次。');
-        } else {
-            alert('換歌失敗: ' + res.message);
+                showToast('任務完成！你可以重新抽選一次。', 'success');
+            } else {
+                showToast('換歌失敗: ' + res.message, 'error');
+            }
+        } catch (e) {
+            showToast('連線錯誤', 'error');
+        } finally {
+            setIsProcessing(false);
         }
     };
 
@@ -191,6 +218,16 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     // State B: Unlocked / Drawing
     return (
         <MainLayout uid={uid} songStats={songStats} status={user.has_rerolled ? '換歌次數耗盡' : '系統就緒'}>
+
+            {/* Toast Container */}
+            {toast && (
+                <CyberToast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={() => setToast(null)}
+                />
+            )}
+
             {(!showResult || isSpinning) && (
                 <CDPlayer isSpinning={isSpinning} currentSong={currentSong || undefined} onAnimationEnd={() => { }} />
             )}
@@ -201,11 +238,11 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
                     {/* Action Buttons */}
                     <div className="grid grid-cols-2 gap-4">
-                        <CyberButton onClick={handleRequestReroll} disabled={user.has_rerolled} variant={user.has_rerolled ? 'default' : 'neon'}>
+                        <CyberButton onClick={handleRequestReroll} disabled={user.has_rerolled || isProcessing} variant={user.has_rerolled ? 'default' : 'neon'}>
                             {user.has_rerolled ? '無法換歌' : '🔄 換歌任務'}
                         </CyberButton>
-                        <CyberButton onClick={handleConfirmSong} variant="primary" disabled={false}>
-                            ✅ 確認歌曲
+                        <CyberButton onClick={handleConfirmSong} variant="primary" disabled={isProcessing}>
+                            {isProcessing ? '處理中...' : '✅ 確認歌曲'}
                         </CyberButton>
                     </div>
                 </div>
@@ -213,7 +250,7 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
             {(!showResult && !isSpinning) && (
                 <div className="w-full max-w-xs mt-8 space-y-3 p-4">
-                    <CyberButton onClick={handleStartDraw} variant="primary" className="w-full py-6 text-xl tracking-widest relative overflow-hidden group" disabled={false}>
+                    <CyberButton onClick={handleStartDraw} variant="primary" className="w-full py-6 text-xl tracking-widest relative overflow-hidden group" disabled={isProcessing}>
                         <span className="relative z-10">[ 啟動抽選程序 ]</span>
                         <div className="absolute inset-0 bg-neon-green/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </CyberButton>
@@ -264,8 +301,10 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
                             </div>
 
                             <div className="pt-4 flex justify-between gap-4">
-                                <CyberButton onClick={() => setShowTaskModal(false)} variant="default" className="flex-1" disabled={false}>放棄</CyberButton>
-                                <CyberButton onClick={handleTaskComplete} variant="primary" className="flex-1" disabled={false}>確認錄製完成</CyberButton>
+                                <CyberButton onClick={() => setShowTaskModal(false)} variant="default" className="flex-1" disabled={isProcessing}>放棄</CyberButton>
+                                <CyberButton onClick={handleTaskComplete} variant="primary" className="flex-1" disabled={isProcessing}>
+                                    {isProcessing ? '驗證中...' : '確認錄製完成'}
+                                </CyberButton>
                             </div>
                         </div>
                     </CyberWindow>
@@ -358,7 +397,7 @@ function MainLayout({ children, uid, songStats, status }: any) {
                 <div className="max-w-md mx-auto p-4 pb-2">
                     <div className="flex justify-between items-center px-1 mb-1">
                         <span className="text-[10px] font-mono text-neon-green/50">系統連線...[線上]</span>
-                        <span className="text-[10px] font-mono text-neon-green/50">網路...[已連接]</span>
+                        <span className="text-neon-purle font-mono text-[10px]">{new Date().toLocaleTimeString()}</span>
                     </div>
                     <div className="text-center">
                         <h1 className="text-2xl font-bold text-white font-mono tracking-wider glitch-effect" data-text="FROM DA ECHO">
@@ -376,9 +415,14 @@ function MainLayout({ children, uid, songStats, status }: any) {
             </header>
 
             {/* Scrollable Main Content */}
-            <main className="flex-1 flex flex-col items-center justify-start p-4 pb-20 relative z-10 w-full max-w-md mx-auto">
+            <main className="flex-1 flex flex-col items-center justify-start p-4 pb-12 relative z-10 w-full max-w-md mx-auto">
                 {children}
             </main>
+
+            {/* Footer Logo */}
+            <footer className="w-full py-6 flex justify-center items-center relative z-10">
+                <img src="/logo.png" alt="FROM DA ECHO" className="h-20 w-auto object-contain drop-shadow-[0_0_15px_rgba(0,255,65,0.3)] opacity-80 hover:opacity-100 transition-all duration-500" />
+            </footer>
         </div>
     );
 }
