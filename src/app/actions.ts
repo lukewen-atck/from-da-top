@@ -33,7 +33,7 @@ export async function getOrCreateUser(uid: string) {
         }
 
         // Create new user
-        const newUser = await db.insert(users).values({ uid }).returning();
+        const newUser = await db.insert(users).values({ uid }).returning() as any[];
         return {
             user: newUser[0],
             selectedSong: null,
