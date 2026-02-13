@@ -168,7 +168,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony1/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/80/80/5680800f-d526-fa0a-aead-0cab4df4699c/886446889665.jpg/600x600bb.jpg"
   },
   {
     "id": 2,
@@ -177,7 +177,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony2/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f9/82/88/f98288eb-ea32-6c8c-7919-357c31a4b437/1400X1400.jpg/600x600bb.jpg"
   },
   {
     "id": 3,
@@ -186,7 +186,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony3/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/c2/0c/44/dj.smpllcgy.jpg/600x600bb.jpg"
   },
   {
     "id": 4,
@@ -195,7 +195,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony4/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/4e/cf/db/mzi.ypabaoxf.jpg/600x600bb.jpg"
   },
   {
     "id": 5,
@@ -204,7 +204,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony5/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bf/1f/c2/bf1fc215-9240-cb99-ef57-ad2dd855610a/dj.tlgtqqag.png/600x600bb.jpg"
   },
   {
     "id": 6,
@@ -213,7 +213,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony6/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d6/d1/bb/d6d1bb74-e2d3-743e-f514-5668390c4d67/gaibianziji_fengmian.jpg/600x600bb.jpg"
   },
   {
     "id": 7,
@@ -222,7 +222,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony7/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c3/5d/3b/c35d3b17-40cd-f24c-d72b-1f2a6099c6e9/Open_Fire_cover.jpg/600x600bb.jpg"
   },
   {
     "id": 8,
@@ -231,7 +231,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony8/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/c2/0c/44/dj.smpllcgy.jpg/600x600bb.jpg"
   },
   {
     "id": 9,
@@ -240,7 +240,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony9/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f9/82/88/f98288eb-ea32-6c8c-7919-357c31a4b437/1400X1400.jpg/600x600bb.jpg"
   },
   {
     "id": 10,
@@ -249,7 +249,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony10/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/48/fd/2f/48fd2fe5-31b2-d979-53a4-9aebf5175bdb/mzi.biqraozb.jpg/600x600bb.jpg"
   },
   {
     "id": 11,
@@ -258,7 +258,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony11/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/48/fd/2f/48fd2fe5-31b2-d979-53a4-9aebf5175bdb/mzi.biqraozb.jpg/600x600bb.jpg"
   },
   {
     "id": 12,
@@ -267,7 +267,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony12/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/be/4a/77/be4a7730-c144-a39e-c7b6-9d26ea0ebff3/1400X1400.jpg/600x600bb.jpg"
   },
   {
     "id": 13,
@@ -276,7 +276,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony13/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d6/d1/bb/d6d1bb74-e2d3-743e-f514-5668390c4d67/gaibianziji_fengmian.jpg/600x600bb.jpg"
   },
   {
     "id": 14,
@@ -285,7 +285,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony14/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f9/82/88/f98288eb-ea32-6c8c-7919-357c31a4b437/1400X1400.jpg/600x600bb.jpg"
   },
   {
     "id": 15,
@@ -294,7 +294,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony15/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/c2/0c/44/dj.smpllcgy.jpg/600x600bb.jpg"
   },
   {
     "id": 16,
@@ -303,7 +303,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony16/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ec/b5/3f/ecb53fef-904b-89b5-1a38-7e402f053007/196871423175.jpg/600x600bb.jpg"
   },
   {
     "id": 17,
@@ -312,7 +312,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony17/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b9/41/93/b941939c-84e2-b8cf-5099-7698d1a5fb40/mzi.ynielmpd.jpg/600x600bb.jpg"
   },
   {
     "id": 18,
@@ -330,7 +330,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony19/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6d/80/35/6d8035bf-86e1-9f6d-6afe-e83660e28a65/mzi.zhoaufjn.jpg/600x600bb.jpg"
   },
   {
     "id": 20,
@@ -348,7 +348,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony21/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/7f/b7/0e7fb735-0898-7a99-3fc3-e23913cce413/886447846575.jpg/600x600bb.jpg"
   },
   {
     "id": 22,
@@ -357,7 +357,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony22/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/3d/6b/88/mzi.jpzngnqo.jpg/600x600bb.jpg"
   },
   {
     "id": 23,
@@ -366,7 +366,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony23/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/71/50/b5/7150b5f4-e441-4b4c-255f-724d91e63535/mzi.algikrvk.jpg/600x600bb.jpg"
   },
   {
     "id": 24,
@@ -375,7 +375,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony24/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/58/8d/6d/588d6d61-fbac-148a-86bd-0030ce076ac1/23UM1IM57281.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 25,
@@ -384,7 +384,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony25/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1c/10/ad/1c10ad86-a96c-15e4-f809-360f53011b04/23UM1IM58801.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 26,
@@ -393,7 +393,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony26/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f7/2c/9f/f72c9fc6-c4dc-d6a0-4386-0478b09cb797/23UM1IM58609.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 27,
@@ -402,7 +402,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony27/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8c/47/86/8c47862d-e254-8b49-30cf-d1f05ebba05b/23UM1IM56855.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 28,
@@ -411,7 +411,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony28/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/69/f7/7f/69f77f5e-9b36-917e-cf15-7bd8442572c7/23UM1IM56109.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 29,
@@ -420,7 +420,7 @@ export const songs_2026_02_13 = [
     "year": "2002",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony29/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/b9/fa/14b9fa3f-ef0c-01de-3721-93ff740062b5/23UM1IM56711.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 30,
@@ -429,7 +429,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony30/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/b9/fa/14b9fa3f-ef0c-01de-3721-93ff740062b5/23UM1IM56711.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 31,
@@ -438,7 +438,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony31/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/69/49/61/694961f3-1414-355e-66e4-9649ba13ec55/23UM1IM57770.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 32,
@@ -447,7 +447,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony32/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f7/2c/9f/f72c9fc6-c4dc-d6a0-4386-0478b09cb797/23UM1IM58609.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 33,
@@ -456,7 +456,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony33/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/b9/fa/14b9fa3f-ef0c-01de-3721-93ff740062b5/23UM1IM56711.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 34,
@@ -465,7 +465,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony34/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8c/47/86/8c47862d-e254-8b49-30cf-d1f05ebba05b/23UM1IM56855.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 35,
@@ -474,7 +474,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony35/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/69/f7/7f/69f77f5e-9b36-917e-cf15-7bd8442572c7/23UM1IM56109.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 36,
@@ -510,7 +510,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony39/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2b/09/2c/2b092c5a-2e54-149c-9984-b3139bc35b1f/23UM1IM59801.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 40,
@@ -519,7 +519,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony40/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/53/6c/72/536c7219-e177-a912-9322-e1abf70e8733/23UM1IM58828.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 41,
@@ -528,7 +528,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony41/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/b9/fa/14b9fa3f-ef0c-01de-3721-93ff740062b5/23UM1IM56711.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 42,
@@ -537,7 +537,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony42/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/52/f8/f5/52f8f5a7-1a1e-3491-16bd-240914fb60c8/23UM1IM59705.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 43,
@@ -546,7 +546,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony43/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/53/6c/72/536c7219-e177-a912-9322-e1abf70e8733/23UM1IM58828.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 44,
@@ -555,7 +555,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony44/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e1/61/42/e1614256-60b4-7cd9-809b-11da1506532f/23UM1IM59225.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": 45,
@@ -564,7 +564,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony45/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/db/8d/d9/db8dd92c-0610-cc60-e2af-48686a258ac9/196871143042.jpg/600x600bb.jpg"
   },
   {
     "id": 46,
@@ -573,7 +573,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony46/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/7f/86/09/7f86091b-bba1-7a6f-3d18-2791314c7e9f/dj.oujbidjn.jpg/600x600bb.jpg"
   },
   {
     "id": 47,
@@ -582,7 +582,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony47/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/26/1e/14/261e14a4-a3e5-1dda-4889-a055e35b113f/828767239729.jpg/600x600bb.jpg"
   },
   {
     "id": 48,
@@ -591,7 +591,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony48/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/26/1e/14/261e14a4-a3e5-1dda-4889-a055e35b113f/828767239729.jpg/600x600bb.jpg"
   },
   {
     "id": 49,
@@ -600,7 +600,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony49/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/3d/e2/ba/3de2bae3-26f9-e6aa-4e31-ec183b547307/70217_cover.jpg/600x600bb.jpg"
   },
   {
     "id": 50,
@@ -609,7 +609,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony50/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1c/a7/7a/1ca77a4c-ed54-6a23-d314-072abda2a5df/asset.jpg/600x600bb.jpg"
   },
   {
     "id": 51,
@@ -618,7 +618,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony51/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ad/bb/ae/adbbae2d-a946-bf9c-3497-d3ea49fd13a4/888880687869.jpg/600x600bb.jpg"
   },
   {
     "id": 52,
@@ -627,7 +627,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony52/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/a8/de/d9/mzi.crfnzjnu.jpg/600x600bb.jpg"
   },
   {
     "id": 53,
@@ -636,7 +636,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony53/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b2/49/44/b24944a5-28a5-ffe9-a852-f3d5cdfc8054/mzi.mcskqzfu.jpg/600x600bb.jpg"
   },
   {
     "id": 54,
@@ -645,7 +645,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony54/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b2/49/44/b24944a5-28a5-ffe9-a852-f3d5cdfc8054/mzi.mcskqzfu.jpg/600x600bb.jpg"
   },
   {
     "id": 55,
@@ -654,7 +654,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony55/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/a8/de/d9/mzi.crfnzjnu.jpg/600x600bb.jpg"
   },
   {
     "id": 56,
@@ -663,7 +663,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony56/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/98/fd/e8/98fde8f3-1ff6-d037-6053-b051461468ce/886444716215.jpg/600x600bb.jpg"
   },
   {
     "id": 57,
@@ -672,7 +672,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony57/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/87/a2/88/87a2887c-50dd-a435-da61-0f35f405abba/cover.jpg/600x600bb.jpg"
   },
   {
     "id": 58,
@@ -681,7 +681,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony58/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6e/1b/84/6e1b84c8-1581-c1ff-e8a3-5c1b6a4f7eac/mzi.ckeidwej.jpg/600x600bb.jpg"
   },
   {
     "id": 59,
@@ -690,7 +690,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony59/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/2c/65/a6/mzi.gfyizvei.jpg/600x600bb.jpg"
   },
   {
     "id": 60,
@@ -798,7 +798,7 @@ export const songs_2026_02_13 = [
     "year": "2000",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony71/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/3e/ac/86/mzi.ktxxkofn.jpg/600x600bb.jpg"
   },
   {
     "id": 72,
@@ -807,7 +807,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony72/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/32/ae/22/32ae228c-15f2-c2be-c627-91750ab850ea/dj.tmwtrled.jpg/600x600bb.jpg"
   },
   {
     "id": 73,
@@ -834,7 +834,7 @@ export const songs_2026_02_13 = [
     "year": "2004",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony75/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/f7/be/e8/mzi.xdpchppe.jpg/600x600bb.jpg"
   },
   {
     "id": 76,
@@ -843,7 +843,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony76/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/49/b3/d1/49b3d112-73e7-d758-49f6-b2951b0c1fd3/dj.bpkfhlxk.jpg/600x600bb.jpg"
   },
   {
     "id": 77,
@@ -906,7 +906,7 @@ export const songs_2026_02_13 = [
     "year": "2006",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony83/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/49/b3/d1/49b3d112-73e7-d758-49f6-b2951b0c1fd3/dj.bpkfhlxk.jpg/600x600bb.jpg"
   },
   {
     "id": 84,
@@ -915,7 +915,7 @@ export const songs_2026_02_13 = [
     "year": "2005",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony84/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/01/e8/5601e8f0-f66a-357e-e2dd-7ed4016a203a/mzi.vlvftogr.jpg/600x600bb.jpg"
   },
   {
     "id": 85,
@@ -960,7 +960,7 @@ export const songs_2026_02_13 = [
     "year": "2009",
     "tempo": "抒情",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony89/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/30/f0/87/mzi.fzslqkaz.jpg/600x600bb.jpg"
   },
   {
     "id": 90,
@@ -978,7 +978,7 @@ export const songs_2026_02_13 = [
     "year": "2003",
     "tempo": "快歌",
     "vocal": "女生",
-    "albumArt": "https://picsum.photos/seed/sony91/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a2/f6/d2/a2f6d2ce-7a44-3c87-8774-556d6f30c565/dj.uxjggljv.jpg/600x600bb.jpg"
   },
   {
     "id": 92,
@@ -1068,7 +1068,7 @@ export const songs_2026_02_13 = [
     "year": "2008",
     "tempo": "輕快",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony101/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e2/92/95/e2929549-0322-8277-749a-204abab3e4f6/box3-3cover_1400x1400.jpg/600x600bb.jpg"
   },
   {
     "id": 102,
@@ -1077,7 +1077,7 @@ export const songs_2026_02_13 = [
     "year": "2007",
     "tempo": "抒情",
     "vocal": "男生",
-    "albumArt": "https://picsum.photos/seed/sony102/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/27/44/d2/mzi.whrbijib.jpg/600x600bb.jpg"
   },
   {
     "id": 103,
@@ -1140,7 +1140,7 @@ export const songs_2026_02_13 = [
     "year": "2001",
     "tempo": "輕快",
     "vocal": "團體/合唱",
-    "albumArt": "https://picsum.photos/seed/sony109/300/300"
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/35/ac/f835aceb-ec67-69e3-fd68-9de33dd49240/dj.glnidttf.jpg/600x600bb.jpg"
   },
   {
     "id": 110,
