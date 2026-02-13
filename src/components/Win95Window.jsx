@@ -32,7 +32,7 @@ export function Win95Window({ title, children, onClose, className = '' }) {
   );
 }
 
-export function Win95Button({ children, onClick, disabled, className = '', variant = 'default' }) {
+export function Win95Button({ children, onClick = undefined, disabled = false, className = '', variant = 'default', ...props }) {
   // Sharp edges, neon borders, hover invert
   const baseStyles = "relative font-mono font-bold py-2 px-4 transition-all duration-100 disabled:opacity-30 disabled:cursor-not-allowed active:translate-y-1";
 
@@ -47,6 +47,7 @@ export function Win95Button({ children, onClick, disabled, className = '', varia
       onClick={onClick}
       disabled={disabled}
       className={`${baseStyles} ${variants[variant] || variants.default} ${className}`}
+      {...props}
     >
       {children}
     </button>
