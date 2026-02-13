@@ -29,6 +29,9 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     const [showTaskModal, setShowTaskModal] = useState(false);
     const [currentTask, setCurrentTask] = useState<any>(null);
 
+    // New: Recording Check Modal State
+    const [showRecordingCheck, setShowRecordingCheck] = useState(false);
+
     // Filter State
     const [selectedMood, setSelectedMood] = useState<string | null>(null);
     const [selectedVoice, setSelectedVoice] = useState<string | null>(null);
@@ -62,6 +65,13 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
     // Handlers
     const handleStartDraw = () => {
+        // Step 1: Open Recording Check first
+        setShowRecordingCheck(true);
+    };
+
+    const handleConfirmRecording = () => {
+        // Step 2: Close Recording Check, Open Style Selector
+        setShowRecordingCheck(false);
         setShowStyleSelector(true);
     };
 
@@ -186,7 +196,7 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
             )}
 
             {showResult && currentSong && !isSpinning && (
-                <div className="w-full max-w-sm animate-float flex flex-col gap-6">
+                <div className="w-full max-w-sm animate-float flex flex-col gap-6 pb-8">
                     <ResultCard song={currentSong} isNew={isNewResult} onClose={() => { }} />
 
                     {/* Action Buttons */}
@@ -202,14 +212,28 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
             )}
 
             {(!showResult && !isSpinning) && (
-                <div className="w-full max-w-xs mt-8">
-                    <CyberButton onClick={handleStartDraw} variant="primary" className="w-full py-4 text-xl tracking-widest" disabled={false}>
-                        [ 開始抽選 ]
+                <div className="w-full max-w-xs mt-8 space-y-3 p-4">
+                    <CyberButton onClick={handleStartDraw} variant="primary" className="w-full py-6 text-xl tracking-widest relative overflow-hidden group" disabled={false}>
+                        <span className="relative z-10">[ 啟動抽選程序 ]</span>
+                        <div className="absolute inset-0 bg-neon-green/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </CyberButton>
+
+                    <div className="text-center animate-pulse">
+                        <p className="text-yellow-400 font-bold text-xs bg-black/50 px-2 py-1 inline-block border border-yellow-400/50">
+                            ⚠️ 警告：請務必錄下您的真實反應
+                        </p>
+                    </div>
                 </div>
             )}
 
             {/* Modals */}
+            {showRecordingCheck && (
+                <RecordingConfirmationModal
+                    onConfirm={handleConfirmRecording}
+                    onCancel={() => setShowRecordingCheck(false)}
+                />
+            )}
+
             {showStyleSelector && (
                 <StyleSelector
                     selectedMood={selectedMood}
@@ -222,8 +246,8 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
             )}
 
             {showTaskModal && currentTask && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-                    <CyberWindow title="訪談程序啟動" className="border-neon-purple" onClose={() => setShowTaskModal(false)}>
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 overflow-y-auto">
+                    <CyberWindow title="訪談程序啟動" className="border-neon-purple w-full max-w-md my-auto" onClose={() => setShowTaskModal(false)}>
                         <div className="text-center space-y-6 py-2">
                             <div className="space-y-2">
                                 <h3 className="text-neon-purple font-mono text-sm">&gt;&gt;&gt; 傳入提問</h3>
@@ -251,38 +275,108 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     );
 }
 
+// Sub-component for Recording Check
+function RecordingConfirmationModal({ onConfirm, onCancel }: { onConfirm: () => void, onCancel: () => void }) {
+    const [checkedCamera, setCheckedCamera] = useState(false);
+    const [checkedRec, setCheckedRec] = useState(false);
+
+    const isReady = checkedCamera && checkedRec;
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in zoom-in duration-300">
+            <CyberWindow title="錄影準備確認" className="border-red-500 w-full max-w-md shadow-[0_0_30px_rgba(255,0,0,0.3)]" onClose={onCancel}>
+                <div className="space-y-6 py-4">
+                    {/* Header */}
+                    <div className="flex items-center justify-center gap-3 bg-red-500/10 p-3 border border-red-500/30 rounded">
+                        <div className="w-3 h-3 rounded-full bg-red-600 animate-pulse shadow-[0_0_10px_#ff0000]" />
+                        <span className="text-red-500 font-bold tracking-widest font-mono">等待錄影中...</span>
+                    </div>
+
+                    {/* Main Warning */}
+                    <div className="text-center space-y-2">
+                        <h3 className="text-2xl font-bold text-white leading-tight">
+                            機會只有 2 次！<br />
+                            <span className="text-sm font-normal text-metal-silver">請確保相機已開始錄影。</span>
+                        </h3>
+                    </div>
+
+                    {/* Checklist */}
+                    <div className="space-y-3 bg-black/50 p-4 border border-metal-silver/30">
+                        <label className="flex items-center gap-3 cursor-pointer group">
+                            <div className={`w-6 h-6 border-2 flex items-center justify-center transition-colors ${checkedCamera ? 'border-neon-green bg-neon-green/20' : 'border-metal-silver group-hover:border-white'}`}>
+                                {checkedCamera && <span className="text-neon-green font-bold">✓</span>}
+                            </div>
+                            <input type="checkbox" className="hidden" checked={checkedCamera} onChange={(e) => setCheckedCamera(e.target.checked)} />
+                            <span className={`text-lg transition-colors ${checkedCamera ? 'text-white' : 'text-metal-silver group-hover:text-white'}`}>鏡頭位置已架設</span>
+                        </label>
+
+                        <label className="flex items-center gap-3 cursor-pointer group">
+                            <div className={`w-6 h-6 border-2 flex items-center justify-center transition-colors ${checkedRec ? 'border-neon-green bg-neon-green/20' : 'border-metal-silver group-hover:border-white'}`}>
+                                {checkedRec && <span className="text-neon-green font-bold">✓</span>}
+                            </div>
+                            <input type="checkbox" className="hidden" checked={checkedRec} onChange={(e) => setCheckedRec(e.target.checked)} />
+                            <span className={`text-lg transition-colors ${checkedRec ? 'text-white' : 'text-metal-silver group-hover:text-white'}`}>已按下錄影鍵 (REC)</span>
+                        </label>
+                    </div>
+
+                    {/* Action Button */}
+                    <div className="pt-2">
+                        <CyberButton
+                            onClick={onConfirm}
+                            disabled={!isReady}
+                            variant={isReady ? 'primary' : 'default'}
+                            className={`w-full py-4 text-lg font-bold transition-all duration-300 ${isReady ? 'shadow-[0_0_20px_rgba(0,255,65,0.4)]' : 'opacity-50'}`}
+                        >
+                            {isReady ? '[ 確認無誤：開始抽選 ]' : '[ 等待確認... ]'}
+                        </CyberButton>
+                        <button onClick={onCancel} className="w-full mt-4 text-xs text-metal-silver hover:text-white underline decoration-dashed">
+                            取消並返回
+                        </button>
+                    </div>
+                </div>
+            </CyberWindow>
+        </div>
+    );
+}
+
 // Sub-component for layout re-use
 function MainLayout({ children, uid, songStats, status }: any) {
     return (
-        <div className="min-h-screen bg-cyber-black relative overflow-hidden flex flex-col p-3 font-sans">
-            <div className="scanlines" />
+        <div className="min-h-screen bg-cyber-black flex flex-col font-sans overflow-x-hidden">
+            <div className="scanlines fixed inset-0 pointer-events-none z-50" />
 
-            {/* Background Grid */}
-            <div className="absolute inset-0 pointer-events-none opacity-20"
+            {/* Background Grid - Fixed */}
+            <div className="fixed inset-0 pointer-events-none opacity-20 z-0"
                 style={{
                     backgroundImage: 'linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px)',
                     backgroundSize: '40px 40px'
                 }}
             />
 
-            <header className="text-center py-4 relative z-10 border-b border-neon-green/20 mb-4 bg-black/80 backdrop-blur-md">
-                <div className="flex justify-between items-center px-2 mb-2">
-                    <span className="text-[10px] font-mono text-neon-green/50">系統連線...[線上]</span>
-                    <span className="text-[10px] font-mono text-neon-green/50">網路...[已連接]</span>
-                </div>
-                <h1 className="text-2xl font-bold text-white font-mono tracking-wider glitch-effect" data-text="FROM DA ECHO">
-                    FROM DA ECHO
-                </h1>
-                <div className="mt-2 flex justify-center items-center gap-4 text-xs font-mono">
-                    <span className="text-metal-silver">歌曲總數: {songStats.total}</span>
-                    <span className="text-metal-silver">|</span>
-                    <span className="text-neon-purple">UID: {uid.substring(0, 6)}</span>
-                    <span className="text-metal-silver">|</span>
-                    <span className="text-neon-green">{status}</span>
+            {/* Header - Sticky */}
+            <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-neon-green/20 w-full">
+                <div className="max-w-md mx-auto p-4 pb-2">
+                    <div className="flex justify-between items-center px-1 mb-1">
+                        <span className="text-[10px] font-mono text-neon-green/50">系統連線...[線上]</span>
+                        <span className="text-[10px] font-mono text-neon-green/50">網路...[已連接]</span>
+                    </div>
+                    <div className="text-center">
+                        <h1 className="text-2xl font-bold text-white font-mono tracking-wider glitch-effect" data-text="FROM DA ECHO">
+                            FROM DA ECHO
+                        </h1>
+                        <div className="mt-2 flex justify-center items-center gap-3 text-xs font-mono flex-wrap">
+                            <span className="text-metal-silver whitespace-nowrap">歌曲總數: {songStats.total}</span>
+                            <span className="text-metal-silver">|</span>
+                            <span className="text-neon-purple whitespace-nowrap">UID: {uid.substring(0, 6)}</span>
+                            <span className="text-metal-silver">|</span>
+                            <span className="text-neon-green whitespace-nowrap">{status}</span>
+                        </div>
+                    </div>
                 </div>
             </header>
 
-            <main className="flex-1 flex flex-col items-center justify-start gap-4 pb-16 relative z-10">
+            {/* Scrollable Main Content */}
+            <main className="flex-1 flex flex-col items-center justify-start p-4 pb-20 relative z-10 w-full max-w-md mx-auto">
                 {children}
             </main>
         </div>
