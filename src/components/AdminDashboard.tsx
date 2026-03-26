@@ -39,7 +39,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
 
     if (!unlocked) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center font-mono p-4">
+            <div className="h-screen w-full overflow-y-auto bg-black flex items-center justify-center font-mono p-4">
                 <div className="w-full max-w-md border border-neon-green p-8 text-center space-y-6 shadow-[0_0_20px_rgba(0,255,65,0.2)]">
                     <h1 className="text-3xl font-bold text-neon-green gltich-effect">ADMIN_CONSOLE</h1>
                     <div className="text-metal-silver text-xs tracking-widest">RESTRICTED ACCESS AREA</div>
@@ -125,7 +125,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
     });
 
     return (
-        <div className="min-h-screen bg-black font-mono text-neon-green p-4 md:p-8">
+        <div className="h-screen w-full overflow-y-auto bg-black font-mono text-neon-green p-4 md:p-8">
             {/* --- HEADER --- */}
             <header className="mb-8 border-b border-neon-green/30 pb-4">
                 <div className="flex justify-between items-end">
