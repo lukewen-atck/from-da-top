@@ -22,7 +22,9 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     const [lockedSong, setLockedSong] = useState(initialSong);
 
     // Local UI State
-    const [currentSong, setCurrentSong] = useState<any>(initialSong);
+    const [currentSong, setCurrentSong] = useState<any>(
+        (!!initialUser.selected_song_id && initialUser.note?.includes('[FAKE_DRAW]')) ? null : initialSong
+    );
     const [isSpinning, setIsSpinning] = useState(false);
     const [showResult, setShowResult] = useState(
         !!initialSong && !(!!initialUser.selected_song_id && initialUser.note?.includes('[FAKE_DRAW]'))
