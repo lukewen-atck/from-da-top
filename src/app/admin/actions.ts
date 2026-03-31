@@ -66,7 +66,7 @@ export async function adminResetUser(uid: string) {
 }
 
 // 3. Assign Song
-export async function adminAssignSong(uid: string, songId: number) {
+export async function adminAssignSong(uid: string, songId: number, fakeDraw: boolean = false) {
     try {
         // [NEON-HTTP-DRIVER-FIX]: Removed transaction wrapper.
 
@@ -81,6 +81,12 @@ export async function adminAssignSong(uid: string, songId: number) {
         const user = await db.query.users.findFirst({
             where: eq(users.uid, uid),
         });
+
+        // 整理假抽獎標記
+        let newNote = user?.note || '';
+        if (fakeDraw && !newNote.includes('[FAKE_DRAW]')) {
+            newNote = newNote ? `${newNote} [FAKE_DRAW]` : '[FAKE_DRAW]';
+        }
 
         if (user?.selected_song_id) {
             await db.update(songs)
@@ -102,7 +108,7 @@ export async function adminAssignSong(uid: string, songId: number) {
 
         // 5. Update User
         await db.update(users)
-            .set({ selected_song_id: songId })
+            .set({ selected_song_id: songId, note: newNote })
             .where(eq(users.uid, uid));
 
         revalidatePath('/admin');

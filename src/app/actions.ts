@@ -84,11 +84,15 @@ export async function confirmSong(songId: number, uid: string) {
     try {
         // 1. Double check song availability
         const song = await db.query.songs.findFirst({
-            where: and(eq(songs.id, songId), eq(songs.is_taken, false)),
+            where: eq(songs.id, songId),
         });
 
         if (!song) {
-            return { success: false, message: 'Song already taken or invalid' };
+            return { success: false, message: 'Invalid song' };
+        }
+
+        if (song.is_taken && song.taken_by !== uid) {
+            return { success: false, message: 'Song already taken by someone else' };
         }
 
         // 2. Lock song
@@ -96,9 +100,18 @@ export async function confirmSong(songId: number, uid: string) {
             .set({ is_taken: true, taken_by: uid })
             .where(eq(songs.id, songId));
 
-        // 3. Update user
+        // 3. Update user and clear FAKE_DRAW if present
+        const user = await db.query.users.findFirst({
+            where: eq(users.uid, uid),
+        });
+
+        let newNote = user?.note || '';
+        if (newNote.includes('[FAKE_DRAW]')) {
+            newNote = newNote.replace('[FAKE_DRAW]', '').trim();
+        }
+
         await db.update(users)
-            .set({ selected_song_id: songId })
+            .set({ selected_song_id: songId, note: newNote })
             .where(eq(users.uid, uid));
 
         revalidatePath('/'); // Refresh UI

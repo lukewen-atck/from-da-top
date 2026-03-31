@@ -19,6 +19,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
     const [songFilter, setSongFilter] = useState<'ALL' | 'TAKEN' | 'AVAILABLE'>('ALL');
     const [assignTargetUid, setAssignTargetUid] = useState<string | null>(null);
     const [assignSongId, setAssignSongId] = useState('');
+    const [assignFakeDraw, setAssignFakeDraw] = useState(false);
 
     // Edit State
     const [editingUser, setEditingUser] = useState<string | null>(null);
@@ -92,11 +93,12 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
 
         if (!confirm(`強制將歌曲 ID ${id} 分配給使用者 ${assignTargetUid}？`)) return;
 
-        const res = await adminAssignSong(assignTargetUid, id);
+        const res = await adminAssignSong(assignTargetUid, id, assignFakeDraw);
         if (res.success) {
             alert('分配成功');
             setAssignTargetUid(null);
             setAssignSongId('');
+            setAssignFakeDraw(false);
         } else {
             alert('操作失敗: ' + res.message);
         }
@@ -215,7 +217,7 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
                                             }
                                         </td>
                                         <td className="p-3 text-metal-silver">
-                                            {u.selected_song_id || '-'}
+                                            {u.selected_song_id ? `${u.selected_song_id} - ${songs.find((s: any) => s.id === u.selected_song_id)?.title || '未知'}` : '-'}
                                         </td>
                                         <td className="p-3">
                                             {u.has_rerolled ? <span className="text-red-500">是</span> : '否'}
@@ -320,6 +322,14 @@ export default function AdminDashboard({ initialData }: { initialData: any }) {
                             className="bg-black border border-metal-silver p-2 w-full text-white focus:border-neon-green outline-none"
                             autoFocus
                         />
+
+                        <label className="flex items-center gap-2 cursor-pointer pt-2 group">
+                            <div className={`w-5 h-5 flex items-center justify-center border transition-colors ${assignFakeDraw ? 'border-neon-green bg-neon-green/20' : 'border-metal-silver group-hover:border-white'}`}>
+                                {assignFakeDraw && <span className="text-neon-green text-xs">✓</span>}
+                            </div>
+                            <input type="checkbox" className="hidden" checked={assignFakeDraw} onChange={(e) => setAssignFakeDraw(e.target.checked)} />
+                            <span className="text-sm text-white group-hover:text-neon-green transition-colors">啟用假抽獎 (讓前端顯示抽出此歌的動畫)</span>
+                        </label>
 
                         <div className="flex gap-2 pt-2">
                             <CyberButton onClick={() => handleAssignSong()} variant="primary" className="flex-1">確認指派</CyberButton>

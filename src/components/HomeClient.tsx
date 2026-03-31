@@ -75,7 +75,9 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
 
     // Derived State
     const isLocked = !!user.selected_song_id;
-    const canReroll = !user.has_rerolled && !isLocked;
+    const isFakeDrawPending = isLocked && user.note?.includes('[FAKE_DRAW]');
+    const effectiveIsLocked = isLocked && !isFakeDrawPending;
+    const canReroll = !user.has_rerolled && !effectiveIsLocked;
 
     // Handlers
     const handleStartDraw = () => {
@@ -123,6 +125,16 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
         setIsSpinning(true);
         setShowResult(false);
         setIsNewResult(true);
+
+        // 如果是假抽獎，不呼叫 API，直接等 3 秒然後顯示被分配的歌曲
+        if (isFakeDrawPending) {
+            setTimeout(() => {
+                setCurrentSong(lockedSong);
+                setIsSpinning(false);
+                setTimeout(() => setShowResult(true), 300);
+            }, 3000);
+            return;
+        }
 
         try {
             // Call Server Action with filters
@@ -233,7 +245,7 @@ export default function HomeClient({ initialUser, initialSong, uid }: { initialU
     }
 
     // State A: Locked
-    if (isLocked && lockedSong) {
+    if (effectiveIsLocked && lockedSong) {
         return (
             <MainLayout uid={uid} songStats={songStats} status="已鎖定 / 待確認">
                 <div className="w-full max-w-sm animate-float">
