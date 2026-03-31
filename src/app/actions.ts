@@ -48,7 +48,19 @@ export async function getOrCreateUser(uid: string) {
 // 2. drawSong
 export async function drawSong(uid: string, mood?: string | null, voice?: string | null) {
     try {
-        // Verify user exists/permission (optional for this simple app)
+        // Verify user exists/check fake draw status
+        const user = await db.query.users.findFirst({
+            where: eq(users.uid, uid),
+        });
+
+        if (user?.selected_song_id && user?.note?.includes('[FAKE_DRAW]')) {
+            const lockedSong = await db.query.songs.findFirst({
+                where: eq(songs.id, user.selected_song_id)
+            });
+            if (lockedSong) {
+                return { song: lockedSong };
+            }
+        }
 
         // Build query conditions
         const conditions = [eq(songs.is_taken, false)];
