@@ -1366,6 +1366,306 @@ export const songs_2026_02_13 = [
     "vocal": "團體/合唱",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/70/af/ae/mzi.lqyisqyi.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d2/e1/59/d2e159a3-b87b-a532-083b-4f269617a4fa/mzaf_390825474058782296.plus.aac.p.m4a"
+  },
+  {
+    "id": 112,
+    "title": "Ask For More",
+    "artist": "F4",
+    "year": "2002",
+    "tempo": "快歌",
+    "vocal": "團體/合唱",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/70/af/ae/mzi.lqyisqyi.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0d/d4/1c/0dd41ceb-ed85-1ae0-61ef-35be081790f1/mzaf_965079969401602350.plus.aac.p.m4a"
+  },
+  {
+    "id": 113,
+    "title": "蓋世英雄",
+    "artist": "王力宏",
+    "year": "2005",
+    "tempo": "快歌",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/c2/0c/44/dj.smpllcgy.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/71/26/59/71265968-0c3c-55e1-cebe-706a36ce450d/mzaf_3670779870654260429.plus.aac.p.m4a"
+  },
+  {
+    "id": 114,
+    "title": "心跳",
+    "artist": "王力宏",
+    "year": "2008",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/68/f4/ac/68f4ac58-2694-672f-ff54-1ea0bc082a23/4710243773857_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/53/6f/fd/536ffd18-7f29-5ceb-643a-8e76df60059b/mzaf_7848007583610064482.plus.aac.p.m4a"
+  },
+  {
+    "id": 115,
+    "title": "竹林深處",
+    "artist": "王力宏",
+    "year": "2004",
+    "tempo": "快歌",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/c2/0c/44/dj.smpllcgy.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b6/12/16/b612165a-70aa-0c27-925c-dce010a75f29/mzaf_6992306389419564253.plus.aac.p.m4a"
+  },
+  {
+    "id": 116,
+    "title": "兩個人的下雪天",
+    "artist": "王力宏",
+    "year": "2002",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6a/a3/8d/6aa38da9-3fc1-427c-59a7-fcd0cf21832d/JAY.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/09/27/c6/0927c6a3-2a1d-48a5-f107-de1ba3003eca/mzaf_8111767201876224787.plus.aac.p.m4a"
+  },
+  {
+    "id": 117,
+    "title": "好心分手",
+    "artist": "王力宏/盧巧音",
+    "year": "2002",
+    "tempo": "抒情",
+    "vocal": "團體/合唱",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b8/92/6d/b8926d80-778e-9ec7-d4f5-973de212b457/mzi.fhfkjrgy.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/38/d1/fc/38d1fc3a-21c4-9f2b-75c2-cb7d77702056/mzaf_8738843756129139831.plus.aac.p.m4a"
+  },
+  {
+    "id": 118,
+    "title": "我討厭我自己",
+    "artist": "吳建豪",
+    "year": "2002",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music111/v4/33/e6/fc/33e6fc4a-394f-e944-d1a2-f52930ff5691/886446394527.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/af/6d/59af6d1e-d429-9934-bd6d-7ae497e069aa/mzaf_3942039131092203942.plus.aac.p.m4a"
+  },
+  {
+    "id": 119,
+    "title": "身體會唱歌",
+    "artist": "吳建豪",
+    "year": "2002",
+    "tempo": "快歌",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/ec/71/03/mzi.uhbczztc.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/05/64/91/05649189-e69f-d308-03bc-c220f07020fe/mzaf_6502220389834795341.plus.aac.p.m4a"
+  },
+  {
+    "id": 120,
+    "title": "月光愛人",
+    "artist": "李玟",
+    "year": "2000",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/f5/a0/17/f5a01752-9cbc-5df0-7cf1-3696dda7adeb/dj.xcvtfwro.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/70/d2/4b/70d24b68-8c70-5875-3177-a62850c770ae/mzaf_11591694761537622151.plus.aac.p.m4a"
+  },
+  {
+    "id": 121,
+    "title": "So Crazy",
+    "artist": "李玟",
+    "year": "2001",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/d3/75/e2/d375e2f2-a9e6-840a-4883-5510498ac17a/886446806662.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ef/58/a2/ef58a2d2-f5d0-bab6-2ffb-680dd41d24af/mzaf_6051354470458576529.plus.aac.p.m4a"
+  },
+  {
+    "id": 122,
+    "title": "刀馬旦",
+    "artist": "李玟",
+    "year": "2001",
+    "tempo": "輕快",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/f5/a0/17/f5a01752-9cbc-5df0-7cf1-3696dda7adeb/dj.xcvtfwro.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/32/c1/55/32c15550-8ac5-882b-5f70-0a7b6522d6f4/mzaf_3038852115755331158.plus.aac.p.m4a"
+  },
+  {
+    "id": 123,
+    "title": "Make a Wish",
+    "artist": "周渝民",
+    "year": "2002",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ed/bf/22/edbf2233-0c01-95f2-ee20-0091fc40fbaf/mzi.boglbbhg.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/41/d3/9541d3dd-c397-6781-bd69-43ec0e41e1a3/mzaf_15381497780835439884.plus.aac.p.m4a"
+  },
+  {
+    "id": 124,
+    "title": "Wake Up",
+    "artist": "柯有倫",
+    "year": "2005",
+    "tempo": "快歌",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/26/1e/14/261e14a4-a3e5-1dda-4889-a055e35b113f/828767239729.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ba/14/84/ba14846d-bfd9-f88b-5232-2bfeb6f6b747/mzaf_15558251731929603834.plus.aac.p.m4a"
+  },
+  {
+    "id": 125,
+    "title": "好想你",
+    "artist": "徐若瑄",
+    "year": "2005",
+    "tempo": "輕快",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/70/09/0a/70090af8-afb9-b1c1-3c96-81e65b1463a7/cover1_iTunes.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/75/39/7f/75397f3d-059b-b24a-8119-8ef465542816/mzaf_11947756640334581850.plus.aac.p.m4a"
+  },
+  {
+    "id": 126,
+    "title": "如果你是李白",
+    "artist": "莫文蔚",
+    "year": "2002",
+    "tempo": "輕快",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/54/3f/a7/543fa7d1-700b-f37c-bf0c-faa452791966/5099750829028.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/b5/d7/bdb5d719-b319-1d58-dcc2-f12ee3d70d5a/mzaf_5898444153488251951.plus.aac.p.m4a"
+  },
+  {
+    "id": 127,
+    "title": "愛死你",
+    "artist": "莫文蔚",
+    "year": "2003",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ae/6d/ea/ae6deae9-bf98-e9a9-c574-f951a58a299a/5099751360827.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/93/a4/64/93a464db-1560-7571-a225-68cde42824db/mzaf_15984565289325057071.plus.aac.p.m4a"
+  },
+  {
+    "id": 128,
+    "title": "手",
+    "artist": "莫文蔚",
+    "year": "2006",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5c/32/97/5c32974e-27e3-add7-41a2-9c74891e1304/828768395523.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/06/c7/3d/06c73d46-f92f-b234-6d38-9f2b528807e1/mzaf_11934959584364236878.plus.aac.p.m4a"
+  },
+  {
+    "id": 129,
+    "title": "顯微鏡下的愛情",
+    "artist": "黃義達",
+    "year": "2004",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/f7/be/e8/mzi.xdpchppe.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/30/08/dc/3008dcb8-5b3a-3150-bebc-3940dd24e516/mzaf_4473103835929332836.plus.aac.p.m4a"
+  },
+  {
+    "id": 130,
+    "title": "寫給自己的歌",
+    "artist": "黃義達",
+    "year": "2008",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Features/93/93/e0/dj.bfpbdlrr.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/39/3c/d7/393cd7b8-4f0d-1bad-77cc-026884b9176b/mzaf_4198681171272256105.plus.aac.p.m4a"
+  },
+  {
+    "id": 131,
+    "title": "只想愛你",
+    "artist": "楊丞琳",
+    "year": "2005",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/01/e8/5601e8f0-f66a-357e-e2dd-7ed4016a203a/mzi.vlvftogr.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d6/2e/eb/d62eeb38-5756-a805-5447-35d79a410718/mzaf_8517896417993576767.plus.aac.p.m4a"
+  },
+  {
+    "id": 132,
+    "title": "過敏",
+    "artist": "楊丞琳",
+    "year": "2006",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/49/b3/d1/49b3d112-73e7-d758-49f6-b2951b0c1fd3/dj.bpkfhlxk.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/b1/83/44b18371-91e3-b203-ee91-333402759f59/mzaf_512386838015920334.plus.aac.p.m4a"
+  },
+  {
+    "id": 133,
+    "title": "任意門",
+    "artist": "楊丞琳",
+    "year": "2007",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d6/cf/21/d6cf217f-5624-e95d-0bc2-ef2f3fcff290/mzi.ieqegpxg.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/0a/56/ed0a5632-f664-f038-3ccc-0ee5235bd410/mzaf_2866892773053849856.plus.aac.p.m4a"
+  },
+  {
+    "id": 134,
+    "title": "冷戰",
+    "artist": "楊丞琳",
+    "year": "2008",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/8c/95/48/8c954827-09fd-17fb-8ec8-f6e959bab106/mzi.vpnvddqr.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/46/b7/c4/46b7c46e-a9d4-ee99-1db9-bdfdf0bc4bbd/mzaf_13408506022339786688.plus.aac.p.m4a"
+  },
+  {
+    "id": 135,
+    "title": "騎士精神",
+    "artist": "蔡依林",
+    "year": "2003",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/e5/57/87/e55787b1-54d0-0c37-d72d-0f56c74f19e7/886443625020.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ab/3b/a3/ab3ba3b3-6f74-b917-754f-36026f9201a1/mzaf_10949326565393977521.plus.aac.p.m4a"
+  },
+  {
+    "id": 136,
+    "title": "就是愛",
+    "artist": "蔡依林",
+    "year": "2004",
+    "tempo": "輕快",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/e6/fb/d9e6fb64-51bb-f91e-f7e7-0d4969f898a5/884977313550.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/58/77/aa5877ea-ef3c-0411-90cb-e9be1d9b5fa3/mzaf_1807169402754120538.plus.aac.p.m4a"
+  },
+  {
+    "id": 137,
+    "title": "海盜",
+    "artist": "蔡依林",
+    "year": "2004",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/e6/fb/d9e6fb64-51bb-f91e-f7e7-0d4969f898a5/884977313550.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b6/50/d6/b650d6e1-7c0f-702d-dbc1-7c3be77a6fb6/mzaf_5295415935011187592.plus.aac.p.m4a"
+  },
+  {
+    "id": 138,
+    "title": "許願池的希臘少女",
+    "artist": "蔡依林",
+    "year": "2005",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e6/e0/91/e6e0914a-ef90-2f4f-0fe7-3529f6232a01/mzi.svixalbz.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e8/67/45/e86745f7-6e99-bff5-cdae-24b37977321e/mzaf_13617091519370947599.plus.aac.p.m4a"
+  },
+  {
+    "id": 139,
+    "title": "翻不完的夏天",
+    "artist": "蔡旻佑",
+    "year": "2006",
+    "tempo": "輕快",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/0f/df/d5/0fdfd59c-2d10-47f7-f8af-50a078879cdb/886970248426.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f8/99/92/f8999248-d13a-97df-f6d1-7a7789bd48b1/mzaf_10238761375606093849.plus.aac.p.m4a"
+  },
+  {
+    "id": 140,
+    "title": "我想要說",
+    "artist": "蔡旻佑",
+    "year": "2006",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/0f/df/d5/0fdfd59c-2d10-47f7-f8af-50a078879cdb/886970248426.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/84/e9/18/84e9185d-c13a-a85e-9278-3c69dcb2a003/mzaf_10545295721527537943.plus.aac.p.m4a"
+  },
+  {
+    "id": 141,
+    "title": "愛斯基摩",
+    "artist": "蜜雪薇琪",
+    "year": "2005",
+    "tempo": "抒情",
+    "vocal": "團體/合唱",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c0/b4/fa/c0b4fa76-9afb-c68f-2116-e93c66514985/mzi.rhhotrex.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/16/91/22/169122a0-1ac2-63e0-1578-67188c0df9bd/mzaf_8395446233600434377.plus.aac.p.m4a"
   }
 ];
 
