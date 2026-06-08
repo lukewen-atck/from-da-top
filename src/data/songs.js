@@ -1666,6 +1666,26 @@ export const songs_2026_02_13 = [
     "vocal": "團體/合唱",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c0/b4/fa/c0b4fa76-9afb-c68f-2116-e93c66514985/mzi.rhhotrex.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/16/91/22/169122a0-1ac2-63e0-1578-67188c0df9bd/mzaf_8395446233600434377.plus.aac.p.m4a"
+  },
+  {
+    "id": 142,
+    "title": "巴黎草莓",
+    "artist": "馬念先",
+    "year": "2001",
+    "tempo": "輕快",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/c8/b0/e0/c8b0e003-53ad-c010-ad1a-53327721047a/RD-1917.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/de/43/c3/de43c309-1246-3535-4f54-05318bea7fe9/mzaf_15343015384511023909.plus.aac.p.m4a"
+  },
+  {
+    "id": 143,
+    "title": "Di Da Di",
+    "artist": "李玟",
+    "year": "1998",
+    "tempo": "快歌",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/7f/b7/0e7fb735-0898-7a99-3fc3-e23913cce413/886447846575.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a9/73/56/a973563a-2a6a-68db-7ca2-ffb5e5f3d670/mzaf_3590574498221603373.plus.aac.p.m4a"
   }
 ];
 
