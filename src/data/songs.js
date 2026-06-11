@@ -1686,6 +1686,36 @@ export const songs_2026_02_13 = [
     "vocal": "女生",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/7f/b7/0e7fb735-0898-7a99-3fc3-e23913cce413/886447846575.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a9/73/56/a973563a-2a6a-68db-7ca2-ffb5e5f3d670/mzaf_3590574498221603373.plus.aac.p.m4a"
+  },
+  {
+    "id": 144,
+    "title": "你的電話",
+    "artist": "藍心湄/脫拉庫",
+    "year": "1999",
+    "tempo": "快歌",
+    "vocal": "團體/合唱",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/4d/5e/14/4d5e14ce-c09f-8de6-7492-aa147593393a/88644760126.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e9/e0/5c/e9e05c0a-efd0-b6b4-17a2-d33350ccdacd/mzaf_16630043029773295291.plus.aac.p.m4a"
+  },
+  {
+    "id": 145,
+    "title": "凌晨三點鐘",
+    "artist": "張智成",
+    "year": "2003",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c3/77/ad/c377ad5b-2082-18ce-823f-f5024e16531d/4713213197615.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/38/82/09/388209af-ba49-1b7e-239d-536e07cfcfe4/mzaf_9057022023709228052.plus.aac.p.m4a"
+  },
+  {
+    "id": 146,
+    "title": "曲終人散",
+    "artist": "張宇",
+    "year": "1996",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/5a/99/a0/5a99a0f2-e590-5096-dad1-affbf230c018/825646246410.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/70/c7/f3/70c7f3c1-0923-bd31-e58d-092b8889a156/mzaf_18269230423303307856.plus.aac.p.m4a"
   }
 ];
 
