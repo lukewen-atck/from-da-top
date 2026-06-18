@@ -1716,6 +1716,46 @@ export const songs_2026_02_13 = [
     "vocal": "男生",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/5a/99/a0/5a99a0f2-e590-5096-dad1-affbf230c018/825646246410.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/70/c7/f3/70c7f3c1-0923-bd31-e58d-092b8889a156/mzaf_18269230423303307856.plus.aac.p.m4a"
+  },
+  {
+    "id": 147,
+    "title": "他不愛我",
+    "artist": "莫文蔚",
+    "year": "1997",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/c5/41/78/c54178a8-eec1-4b5b-3a93-5cfc13302181/ROD-5293.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/60/70/57/60705730-e0b9-6999-add6-c1ed8c2c1a0e/mzaf_2439859444202241900.plus.aac.p.m4a"
+  },
+  {
+    "id": 148,
+    "title": "K歌之王",
+    "artist": "陳奕迅",
+    "year": "2001",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/e6/66/56e6661d-e570-782f-fbc8-e7b12e38f1a7/EEG3035V1-_-.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/44/83/e8/4483e8fc-d2be-0266-686d-85ee45015f68/mzaf_15104175320946798226.plus.aac.p.m4a"
+  },
+  {
+    "id": 149,
+    "title": "The Moment",
+    "artist": "孫燕姿",
+    "year": "2003",
+    "tempo": "抒情",
+    "vocal": "女生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8a/91/d7/8a91d731-cdb1-01b5-17a9-c88cf66d6e01/5050466855725.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/90/24/ad/9024ad60-00f5-4175-891b-52404f369b44/mzaf_3164352300553526261.plus.aac.p.m4a"
+  },
+  {
+    "id": 150,
+    "title": "陌生人",
+    "artist": "Soler",
+    "year": "2005",
+    "tempo": "抒情",
+    "vocal": "團體/合唱",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/68/7e/e1687e1a-50f5-ce1c-6f42-d747cd1d0248/634479150050.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/06/3f/2f063fe3-9208-aeee-0181-e84b8058f5f3/mzaf_1966687745074126089.plus.aac.p.m4a"
   }
 ];
 
