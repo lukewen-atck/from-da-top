@@ -1756,6 +1756,16 @@ export const songs_2026_02_13 = [
     "vocal": "團體/合唱",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/68/7e/e1687e1a-50f5-ce1c-6f42-d747cd1d0248/634479150050.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/06/3f/2f063fe3-9208-aeee-0181-e84b8058f5f3/mzaf_1966687745074126089.plus.aac.p.m4a"
+  },
+  {
+    "id": 151,
+    "title": "癡心絕對",
+    "artist": "李聖傑",
+    "year": "2002",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b5/b2/03/b5b203fe-9c27-80c1-fcb5-ddae8ccc945d/HN152CD_Cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/56/2e/e8562e63-b4dc-6334-b047-4c4e17d1b607/mzaf_8808344513938599091.plus.aac.p.m4a"
   }
 ];
 
