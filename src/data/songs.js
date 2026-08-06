@@ -1766,6 +1766,16 @@ export const songs_2026_02_13 = [
     "vocal": "男生",
     "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b5/b2/03/b5b203fe-9c27-80c1-fcb5-ddae8ccc945d/HN152CD_Cover.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/56/2e/e8562e63-b4dc-6334-b047-4c4e17d1b607/mzaf_8808344513938599091.plus.aac.p.m4a"
+  },
+  {
+    "id": 152,
+    "title": "路口",
+    "artist": "張震嶽",
+    "year": "2007",
+    "tempo": "抒情",
+    "vocal": "男生",
+    "albumArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4e/d7/3a/4ed73a4f-5d88-dab0-edd1-ad54cd0e418a/RD-1796.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/98/b0/62/98b06264-1b1b-7fc3-95f1-90f00f20f440/mzaf_6175594903685169253.plus.aac.p.m4a"
   }
 ];
 
